@@ -29,6 +29,7 @@
       <nav class="legal k-mono" aria-label="Legal">
         <NuxtLink to="/legal/cookies-policy">{{ $t('legalSection.cookies') }}</NuxtLink>
         <NuxtLink to="/legal/privacy-policy">{{ $t('legalSection.privacy') }}</NuxtLink>
+        <button type="button" class="settings" @click="cookieControl.isModalActive.value = true">{{ $t('v2.contact.cookieSettings') }}</button>
         <a href="#top" class="top" @click.prevent="toTop">{{ $t('v2.contact.backToTop') }} ↑</a>
       </nav>
     </div>
@@ -37,6 +38,7 @@
 
 <script lang="ts" setup>
 const links = useContactLinks()
+const cookieControl = useCookieControl()
 
 const berlinTime = ref('')
 let timer: ReturnType<typeof setInterval> | undefined
@@ -92,7 +94,7 @@ const toTop = () => window.scrollTo({ top: 0, behavior: window.matchMedia('(pref
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
   .mark img { height: 22px; width: auto; opacity: 0.8; }
   .colophon { font-size: var(--fs-xs); color: var(--text-muted); .me { color: var(--teal); } a { color: var(--teal); border-bottom: 1px solid currentColor; &:hover { color: var(--text-strong); } } .heart { color: var(--salmon); display: inline-block; } }
-  .legal { display: flex; gap: 1.5rem; font-size: var(--fs-xs); a { color: var(--text-muted); &:hover { color: var(--teal); } } .top { margin-left: 0.5rem; } }
+  .legal { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; font-size: var(--fs-xs); a, .settings { color: var(--text-muted); &:hover { color: var(--teal); } } .settings { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; } .top { margin-left: 0.5rem; } }
 }
 @media (prefers-reduced-motion: no-preference) {
   .heart { animation: beat 2.5s ease-in-out infinite; }

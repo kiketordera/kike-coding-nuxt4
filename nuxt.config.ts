@@ -80,6 +80,9 @@ export default defineNuxtConfig({
     },
   },
   css: ["@/assets/scss/main.scss"],
+  // View Transitions carry a project cover from the work list into its case study;
+  // the Vue page transition remains the fallback where the API is unsupported.
+  experimental: { viewTransition: true },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -112,6 +115,8 @@ export default defineNuxtConfig({
    // Cookies
    cookieControl: {
     barPosition: "bottom-left",
+    // no floating cookie button — it sat on the phone's primary CTA; settings open from the footer
+    isControlButtonEnabled: false,
     closeModalOnClickOutside: true,
     locales: availableLanguages as SharedLocale[],
     localeTexts: {

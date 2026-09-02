@@ -127,8 +127,8 @@
   },
   "seo": {
     "index": {
-      "title": "Kike Tordera | Création de chefs-d'œuvre numériques",
-      "description": "Découvrez mon expertise en tant qu'ingénieur UX/UI et développeur mobile. Explorez des projets innovants et des insights sur des expériences utilisateur fluides et des solutions logicielles de pointe. Créons ensemble de la magie numérique !"
+      "title": "Kike Tordera — Développeur mobile et ingénieur UX/UI, Berlin",
+      "description": "Je conçois l'app et je la livre. Swift et Flutter, de bout en bout — six apps sur l'App Store, Hack for Good 2018, basé à Berlin."
     },
     "about": {
       "title": "Kike Tordera - À Propos de Moi | Développeur & Designer basé à Berlin",
@@ -149,8 +149,8 @@
       }
     }
   },
-  "titleSEOIndex": "Kike Tordera | Ingénieur UX/UI & Développeur Full-Stack",
-  "descriptionSEOIndex": "Découvrez le portfolio de Kike Tordera, ingénieur UX/UI et développeur full-stack expérimenté, expert en expériences numériques fluides.",
+  "titleSEOIndex": "Kike Tordera — Développeur mobile et ingénieur UX/UI, Berlin",
+  "descriptionSEOIndex": "Je conçois l'app et je la livre. Swift et Flutter, de bout en bout — six apps sur l'App Store, Hack for Good 2018, basé à Berlin.",
   "titleSEOAboutUs": "À propos de Kike Tordera | Un parcours en technologie et innovation",
   "descriptionSEOAboutUs": "Découvrez l’histoire de Kike Tordera, un ingénieur UX/UI et développeur full-stack passionné, alliant créativité et technologie pour concevoir des expériences numériques centrées sur l’utilisateur.",
   "apps": {
@@ -240,10 +240,11 @@
       "work": "Travail",
       "volunteer": "Bénévolat",
       "education": "Formation",
-      "today": "Aujourd'hui"
+      "today": "Aujourd'hui",
+      "yearsSoFar": "{n}+ ans"
     },
     "contact": {
-      "marker": "05 contact",
+      "marker": "contact",
       "title": "Lançons un projet",
       "intro": "Dites-moi ce que vous construisez.",
       "available": "Disponible pour de nouveaux projets",
@@ -252,7 +253,8 @@
       "whatsapp": "WhatsApp",
       "linkedin": "LinkedIn",
       "backToTop": "Retour en haut",
-      "cta": "Réserver un appel de 20 min"
+      "cta": "Réserver un appel de 20 min",
+      "cookieSettings": "Réglages des cookies"
     },
     "error": {
       "title": "Page introuvable",

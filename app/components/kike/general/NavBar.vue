@@ -32,6 +32,7 @@
       </ul>
 
       <button
+        ref="toggle"
         type="button"
         class="toggle"
         :aria-expanded="open"
@@ -96,9 +97,17 @@ const targets = ref(['home', 'work', 'apps', 'contact'])
 const { activeId } = useActiveScroll(targets, { overlayHeight: 96, replaceHash: false })
 const isActive = (id: string) => (id === 'about' ? route.path === '/about' : route.path === '/' && activeId.value === id)
 
+const toggle = ref<HTMLButtonElement | null>(null)
+const onKey = (event: KeyboardEvent) => {
+  if (event.key !== 'Escape' || !open.value) return
+  close()
+  toggle.value?.focus()
+}
+
 watch(() => route.fullPath, close)
 watch(open, (isOpen) => { document.documentElement.style.overflow = isOpen ? 'hidden' : '' })
-onBeforeUnmount(() => { document.documentElement.style.overflow = '' })
+onMounted(() => document.addEventListener('keydown', onKey))
+onBeforeUnmount(() => { document.documentElement.style.overflow = ''; document.removeEventListener('keydown', onKey) })
 </script>
 
 <style lang="scss" scoped>

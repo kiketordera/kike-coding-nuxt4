@@ -50,4 +50,8 @@ p {
   &.german { color: $branding-red; }
   &.swahili { color: $branding-pink-deep; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  :deep(*) { animation: none !important; }
+}
 </style>

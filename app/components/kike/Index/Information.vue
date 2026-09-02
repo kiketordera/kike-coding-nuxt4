@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="hero k-container" aria-labelledby="hero-title">
+  <section id="home" class="hero k-container" :class="{ 'is-replay': replay }" aria-labelledby="hero-title">
     <div class="copy">
       <p class="k-eyebrow reveal-in" style="--d: 0ms">
         <span aria-hidden="true">//</span> {{ $t('v2.hero.eyebrow') }}
@@ -60,21 +60,33 @@ const proof = computed<string[]>(() => {
 
 // The portrait wipes in once its bytes are there; if the load event is missed, show it anyway.
 const loaded = ref(false)
-onMounted(() => { setTimeout(() => { loaded.value = true }, 2500) })
+// The typing choreography plays once per visit; coming back to / shows the hero settled.
+const replay = ref(false)
+onMounted(() => {
+  setTimeout(() => { loaded.value = true }, 2500)
+  try {
+    replay.value = sessionStorage.getItem('hero-played') === '1'
+    sessionStorage.setItem('hero-played', '1')
+  } catch { /* storage unavailable: play it */ }
+})
 </script>
 
 <style lang="scss" scoped>
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem var(--grid-gap);
   padding-top: var(--nav-h);
   min-height: 100svh;
+  overflow: hidden;
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     align-items: end;
     min-height: calc(100svh);
+    overflow: visible;
+    .copy { padding-block: var(--space-section) var(--space-block); }
   }
 }
 
@@ -82,7 +94,11 @@ onMounted(() => { setTimeout(() => { loaded.value = true }, 2500) })
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-block: 1.5rem var(--space-block);
+  // on phones the copy starts over the portrait's lower third, so the first screen is one composition
+  position: relative;
+  z-index: 2;
+  padding-block: clamp(150px, 26svh, 240px) var(--space-block);
+  .k-eyebrow { text-wrap: balance; max-width: 22ch; }
   // The name is allowed to run under the portrait's column: the copy sits above it.
   @media (min-width: 900px) { grid-column: 1 / span 8; grid-row: 1; position: relative; z-index: 2; padding-block: var(--space-section) var(--space-block); }
 }
@@ -111,6 +127,12 @@ onMounted(() => { setTimeout(() => { loaded.value = true }, 2500) })
   .reveal-in { opacity: 0; transform: translateY(14px); animation: rise 0.7s var(--ease-out) forwards; animation-delay: var(--d); }
   .portrait img { clip-path: inset(0 100% 0 0); }
   .portrait img.is-loaded { animation: wipe 1.1s var(--ease-out) forwards; animation-delay: 300ms; }
+}
+// on a return visit within the session everything is already in place
+.is-replay {
+  .line, .line--last { animation: none; max-width: none; }
+  .reveal-in { animation: none; opacity: 1; transform: none; }
+  .portrait img { animation: none; clip-path: none; }
 }
 @keyframes type { to { max-width: calc(var(--chars) * 1ch + 0.15em); } }
 // the last line also has to make room for the cursor block
@@ -144,30 +166,33 @@ onMounted(() => { setTimeout(() => { loaded.value = true }, 2500) })
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 0.25rem; }
 
 .portrait {
-  position: relative;
+  position: absolute;
+  top: var(--nav-h);
+  right: calc(-1 * var(--gutter) - 4%);
+  width: min(74%, 380px);
+  z-index: 1;
   order: -1;
-  margin: 0 calc(-1 * var(--gutter)) -1.5rem 0;
-  display: flex;
-  justify-content: flex-end;
-  overflow: hidden;
 
   img {
-    width: min(78%, 380px);
+    width: 100%;
     height: auto;
-    margin-right: -6%;
-    -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 96%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 96%);
   }
 
   @media (min-width: 900px) {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
     order: 0;
     grid-column: 8 / span 5;
     grid-row: 1;
     align-self: end;
     margin: 0 -4% -1px 0;
-    overflow: visible;
+    display: flex;
+    justify-content: flex-end;
     img {
-      margin-right: 0;
       width: min(100%, 620px);
       -webkit-mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
       mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);

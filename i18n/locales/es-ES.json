@@ -127,8 +127,8 @@
   },
   "seo": {
     "index": {
-      "title": "Kike Tordera | Creando obras maestras digitales",
-      "description": "Descubre mi experiencia como ingeniero UX/UI y desarrollador móvil. Explora proyectos innovadores y perspectivas sobre experiencias de usuario sin interrupciones y soluciones de software de vanguardia. ¡Creemos magia digital juntos!"
+      "title": "Kike Tordera — Desarrollador móvil e ingeniero UX/UI, Berlín",
+      "description": "Diseño la app y la lanzo. Swift y Flutter, de principio a fin — seis apps en la App Store, Hack for Good 2018, en Berlín."
     },
     "about": {
       "title": "Kike Tordera - Sobre Mí | Desarrollador y Diseñador con sede en Berlín",
@@ -149,8 +149,8 @@
       }
     }
   },
-  "titleSEOIndex": "Kike Tordera | Ingeniero UX/UI y Desarrollador Full-Stack",
-  "descriptionSEOIndex": "Descubre el portafolio de Kike Tordera, un experimentado ingeniero UX/UI y desarrollador full-stack especializado en experiencias digitales fluidas.",
+  "titleSEOIndex": "Kike Tordera — Desarrollador móvil e ingeniero UX/UI, Berlín",
+  "descriptionSEOIndex": "Diseño la app y la lanzo. Swift y Flutter, de principio a fin — seis apps en la App Store, Hack for Good 2018, en Berlín.",
   "titleSEOAboutUs": "Sobre Kike Tordera | Una Trayectoria en Tecnología e Innovación",
   "descriptionSEOAboutUs": "Conoce la historia de Kike Tordera, un apasionado ingeniero UX/UI y desarrollador full-stack, combinando creatividad y tecnología para construir experiencias digitales centradas en el usuario.",
   "apps": {
@@ -240,10 +240,11 @@
       "work": "Trabajo",
       "volunteer": "Voluntariado",
       "education": "Formación",
-      "today": "Hoy"
+      "today": "Hoy",
+      "yearsSoFar": "{n}+ años"
     },
     "contact": {
-      "marker": "05 contacto",
+      "marker": "contacto",
       "title": "Empecemos un proyecto",
       "intro": "Cuéntame qué estás construyendo.",
       "available": "Disponible para nuevos proyectos",
@@ -252,7 +253,8 @@
       "whatsapp": "WhatsApp",
       "linkedin": "LinkedIn",
       "backToTop": "Volver arriba",
-      "cta": "Reserva una llamada de 20 min"
+      "cta": "Reserva una llamada de 20 min",
+      "cookieSettings": "Ajustes de cookies"
     },
     "error": {
       "title": "Página no encontrada",

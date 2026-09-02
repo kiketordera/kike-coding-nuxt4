@@ -127,8 +127,8 @@
   },
   "seo": {
     "index": {
-      "title": "Kike Tordera | Creating digital masterpieces",
-      "description": "Discover my expertise as a UX/UI engineer and mobile developer. Explore innovative projects and insights into seamless user experiences and cutting-edge software solutions. Let’s create digital magic together!"
+      "title": "Kike Tordera — Mobile developer & UX/UI engineer, Berlin",
+      "description": "I design the app and I ship it. Swift and Flutter, end to end — six apps on the App Store, Hack for Good 2018, based in Berlin."
     },
     "about": {
       "title": "Kike Tordera - About Me | Berlin-Based Developer & Designer",
@@ -149,8 +149,8 @@
       }
     }
   },
-  "titleSEOIndex": "Kike Tordera | UX/UI Engineer & Full-Stack Developer",
-  "descriptionSEOIndex": "Explore Kike Tordera’s portfolio as a seasoned UX/UI engineer and full-stack developer specializing in creating seamless digital experiences.",
+  "titleSEOIndex": "Kike Tordera — Mobile developer & UX/UI engineer, Berlin",
+  "descriptionSEOIndex": "I design the app and I ship it. Swift and Flutter, end to end — six apps on the App Store, Hack for Good 2018, based in Berlin.",
   "titleSEOAboutUs": "About Kike Tordera | A Journey in Tech & Innovation",
   "descriptionSEOAboutUs": "Discover the story of Kike Tordera, a passionate UX/UI engineer and full-stack developer, blending creativity and technology to build user-centered digital experiences.",
   "apps": {
@@ -240,10 +240,11 @@
       "work": "Work",
       "volunteer": "Volunteer",
       "education": "Education",
-      "today": "Today"
+      "today": "Today",
+      "yearsSoFar": "{n}+ years"
     },
     "contact": {
-      "marker": "05 contact",
+      "marker": "contact",
       "title": "Start a project",
       "intro": "Tell me what you are building.",
       "available": "Available for new projects",
@@ -252,7 +253,8 @@
       "whatsapp": "WhatsApp",
       "linkedin": "LinkedIn",
       "backToTop": "Back to top",
-      "cta": "Book a 20-min call"
+      "cta": "Book a 20-min call",
+      "cookieSettings": "Cookie settings"
     },
     "error": {
       "title": "Page not found",

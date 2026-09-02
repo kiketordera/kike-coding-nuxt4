@@ -127,8 +127,8 @@
   },
   "seo": {
     "index": {
-      "title": "Kike Tordera | Erstellung digitaler Meisterwerke",
-      "description": "Entdecken Sie meine Expertise als UX/UI-Ingenieur und Mobile Developer. Erkunden Sie innovative Projekte und Einblicke in nahtlose Benutzererlebnisse und modernste Softwarelösungen. Lassen Sie uns gemeinsam digitale Magie erschaffen!"
+      "title": "Kike Tordera — Mobile Developer und UX/UI Engineer, Berlin",
+      "description": "Ich gestalte die App und liefere sie aus. Swift und Flutter, von Anfang bis Ende — sechs Apps im App Store, Hack for Good 2018, in Berlin."
     },
     "about": {
       "title": "Kike Tordera - Über Mich | Entwickler & Designer mit Sitz in Berlin",
@@ -149,8 +149,8 @@
       }
     }
   },
-  "titleSEOIndex": "Kike Tordera | UX/UI-Ingenieur & Full-Stack-Entwickler",
-  "descriptionSEOIndex": "Entdecken Sie das Portfolio von Kike Tordera, einem erfahrenen UX/UI-Ingenieur und Full-Stack-Entwickler für nahtlose digitale Erlebnisse.",
+  "titleSEOIndex": "Kike Tordera — Mobile Developer und UX/UI Engineer, Berlin",
+  "descriptionSEOIndex": "Ich gestalte die App und liefere sie aus. Swift und Flutter, von Anfang bis Ende — sechs Apps im App Store, Hack for Good 2018, in Berlin.",
   "titleSEOAboutUs": "Über Kike Tordera | Eine Reise durch Technik & Innovation",
   "descriptionSEOAboutUs": "Erfahren Sie mehr über Kike Tordera, einen leidenschaftlichen UX/UI-Ingenieur und Full-Stack-Entwickler, der Kreativität und Technologie verbindet, um benutzerzentrierte digitale Erlebnisse zu schaffen.",
   "apps": {
@@ -240,10 +240,11 @@
       "work": "Arbeit",
       "volunteer": "Ehrenamt",
       "education": "Ausbildung",
-      "today": "Heute"
+      "today": "Heute",
+      "yearsSoFar": "{n}+ Jahre"
     },
     "contact": {
-      "marker": "05 kontakt",
+      "marker": "kontakt",
       "title": "Projekt starten",
       "intro": "Erzähl mir, was du baust.",
       "available": "Verfügbar für neue Projekte",
@@ -252,7 +253,8 @@
       "whatsapp": "WhatsApp",
       "linkedin": "LinkedIn",
       "backToTop": "Nach oben",
-      "cta": "20-Minuten-Gespräch buchen"
+      "cta": "20-Minuten-Gespräch buchen",
+      "cookieSettings": "Cookie-Einstellungen"
     },
     "error": {
       "title": "Seite nicht gefunden",

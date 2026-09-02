@@ -23,7 +23,7 @@
       <li v-for="exp in shown" :key="exp.title + exp.startDate" v-reveal class="entry" :class="exp.type">
         <div class="when">
           <p class="date k-mono">{{ exp.startDate }} — {{ isToday(exp.endDate) ? $t('v2.experience.today') : exp.endDate }}</p>
-          <p class="duration k-mono">{{ isToday(exp.durationMonths) ? $t('v2.experience.today') : exp.durationMonths }}</p>
+          <p class="duration k-mono">{{ durationOf(exp) }}</p>
           <div class="logo"><img :src="exp.img" :alt="exp.nameCompany" loading="lazy" width="96" height="56"></div>
         </div>
         <div class="axis" aria-hidden="true"><span class="dot" /></div>
@@ -51,6 +51,7 @@ import type { ProjectExperience } from '~/types/types'
 
 type Filter = 'all' | 'work' | 'volunteer' | 'education'
 
+const { t } = useI18n()
 const experiences = await getI18nJson<ProjectExperience>('work-experience')
 const filters: Filter[] = ['all', 'work', 'volunteer', 'education']
 const filter = ref<Filter>('work')
@@ -59,6 +60,14 @@ const latestFirst = computed(() => [...experiences].reverse())
 const shown = computed(() => latestFirst.value.filter((exp) => filter.value === 'all' || exp.type === filter.value))
 
 const isToday = (value: string) => /^(today|hoy|aujourd|heute)/i.test(value)
+
+// An open-ended role shows how long it has run so far instead of printing "Today" twice.
+const durationOf = (exp: ProjectExperience) => {
+  if (!isToday(exp.durationMonths)) return exp.durationMonths
+  const startYear = Number(exp.startDate.match(/\d{4}/)?.[0])
+  const years = new Date().getFullYear() - startYear
+  return years > 0 ? t('v2.experience.yearsSoFar', { n: years }) : t('v2.experience.today')
+}
 
 // "N years, N roles, N countries" — computed from the data, never typed by hand.
 const stats = computed(() => {
@@ -126,7 +135,8 @@ const stats = computed(() => {
   grid-row: 1 / span 2;
   @media (min-width: 900px) { grid-column: 2; grid-row: 1; }
 
-  &::before, &::after { content: ''; position: absolute; left: calc(50% - 1px); top: 0; bottom: 0; width: 2px; }
+  // the line runs through the entry's bottom padding so the log reads as one continuous axis
+  &::before, &::after { content: ''; position: absolute; left: calc(50% - 1px); top: 0; bottom: calc(-1 * var(--space-block)); width: 2px; }
   &::before { background: var(--line); }
   &::after { background: var(--type); transform: scaleY(0); transform-origin: top; }
   .dot {
@@ -166,21 +176,25 @@ const stats = computed(() => {
   .logo {
     width: 96px; height: 56px;
     display: flex; align-items: center; justify-content: center;
-    background: var(--text-strong);
+    background: var(--text);
+    border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 0.4rem 0.6rem;
     margin-top: 0.25rem;
-    img { max-height: 100%; width: auto; object-fit: contain; filter: grayscale(1); opacity: 0.85; transition: filter var(--dur-fast) ease-out, opacity var(--dur-fast) ease-out; }
+    opacity: 0.7;
+    transition: opacity var(--dur-fast) ease-out, background-color var(--dur-fast) ease-out;
+    img { max-height: 100%; width: auto; object-fit: contain; filter: grayscale(1); transition: filter var(--dur-fast) ease-out; }
   }
 }
-.entry:hover .logo img { filter: none; opacity: 1; }
+.entry:hover .logo { opacity: 1; background: var(--text-strong); img { filter: none; } }
 
 .what {
   grid-column: 2; grid-row: 2;
   display: grid; gap: 0.6rem; min-width: 0;
   @media (min-width: 900px) { grid-column: 3; grid-row: 1; }
 
-  h3 { font-size: var(--fs-h3); color: var(--type); font-weight: 700; .brace { color: var(--type); opacity: 0.75; } }
+  // Titles stay in the text colour — teal means "interactive" everywhere else; the entry type lives on the dot.
+  h3 { font-size: var(--fs-h3); color: var(--text-strong); font-weight: 700; .brace { color: var(--salmon); } }
   .company { font-size: var(--fs-sm); color: var(--text-strong); font-weight: 600; a { color: inherit; border-bottom: 1px solid var(--line-strong); &:hover { color: var(--teal); border-color: currentColor; } } .place { color: var(--text-muted); font-weight: 400; } }
   .desc { font-family: var(--font-text); color: var(--text); max-width: 62ch; p { margin: 0; } p + p { margin-top: 0.5em; } }
   .chips { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }

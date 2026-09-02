@@ -109,4 +109,8 @@ const rows = [
     }
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  :deep(*) { animation: none !important; }
+}
 </style>

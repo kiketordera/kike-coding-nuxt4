@@ -19,6 +19,12 @@
     <main class="ground">
       <slot />
     </main>
+
+    <!-- Leave the client's world the same way every other case study ends: previous / next, then the site footer. -->
+    <div class="outro">
+      <kike-experience-SliderControls :index="0" />
+      <kike-general-Footer />
+    </div>
   </div>
 </template>
 
@@ -31,7 +37,14 @@
   --vv-nav-h: 60px;
   --nav-h: calc(var(--vv-strip-h) + var(--vv-nav-h));
   min-height: 100vh;
-  background: white; // the existing VV ground — the product keeps its white brand
+  background: var(--bg);
+}
+
+.outro {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-text);
+  border-top: 1px solid var(--line);
 }
 
 .strip {

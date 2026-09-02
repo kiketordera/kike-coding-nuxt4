@@ -7,13 +7,13 @@
         "ngoFunctionality": "All necessary functionality for NGOs who work in the ground fighting poverty and inequality. Workflow specialized on empowering people through knowledge and vocational training for fair trade operations.",
         "cards": {
             "softwarePlatform": "Software platform for the NGOs that works on the ground and they have a focus on vocational training or education",
-            "videoTutorials": "The learning is based on video-tutorials, so it can be scalable and much more affordable than presencial training",
+            "videoTutorials": "The learning is based on video-tutorials, so it can be scalable and much more affordable than in-person training",
             "offlineInstallation": "Can be installed in any device as a server, including a RaspberryPI for remote areas without network connection"
         },
         "ngoFocus": "Most NGOs who provide help in the rural areas are focusing on vocational training, giving the local communities some abilities in order for them to be able to create any product.",
         "growingFarm": "The more clear example will be the growing farm part, where a lot of NGOs collaborate to create fair-trade products, like coffee, tea, chocolate… but there is also the vocational training focused on manufacturing products, like bags, wallets, shoes, and traditional products from the local communities.",
-        "empowerment": "The most powerful way to empower people is through education, and also giving vocational knowledge and training, but having presential training at every location is too cost-intensive to be realistic.",
-        "softwarePlatform": "The software platform is a costless and effective way to escalate education and track the progress and the results in real-time."
+        "empowerment": "The most powerful way to empower people is through education, and also giving vocational knowledge and training, but having in-person training at every location is too cost-intensive to be realistic.",
+        "softwarePlatform": "The software platform is a costless and effective way to scale education and track the progress and the results in real-time."
     },
     "gradientSection": {
         "reinventLogin": {
@@ -77,8 +77,8 @@
             "description2": "It can create any combination that the scope of the project can generate (covering all the money quantities) and is easily adaptable to any currency."
         },
         "performance": {
-            "description1": "w to the workers and the money invested in the materials to make the products.",
-            "description2": "You can see the data globally by all services, locally buy a specific service, or individually, by a specific worker in the system. All the views have the data in written words and numbers, in the graphic and numerical alphabet and with a chart for the representation."
+            "description1": "Follow the money paid to the workers and the money invested in the materials to make the products.",
+            "description2": "You can see the data globally by all services, locally by a specific service, or individually, by a specific worker in the system. All the views have the data in written words and numbers, in the graphic and numerical alphabet and with a chart for the representation."
         },
         "video": {
             "description1": "Custom video tutorials, divided in steps for a guided and easy comprehension and with warnings about common mistakes to guide the process and avoid material waste.",
@@ -96,7 +96,7 @@
     },
     "offlineModeSection": {
         "title": "Offline Mode",
-        "description": "We acknowledge the situation of incomunicación in some rural areas, and especially the remote areas where NGOs have more action, so we prepared the software from the beginning to be able to run in remote areas. For less than 50 $ you can create your own remote server with a RaspberryPI, and sync with the cloud with a USB stick when you reach the network. It also features the latest technologies in the market to be future-proof."
+        "description": "We acknowledge the poor connectivity in some rural areas, and especially the remote areas where NGOs have more action, so we prepared the software from the beginning to be able to run in remote areas. For less than 50 $ you can create your own remote server with a RaspberryPI, and sync with the cloud with a USB stick when you reach the network. It also features the latest technologies in the market to be future-proof."
     },
     "technologiesSection": {
         "title": "Technologies used to carry out the project",

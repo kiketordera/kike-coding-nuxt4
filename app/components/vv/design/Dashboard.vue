@@ -1,5 +1,5 @@
 <template>
-  <section class="band">
+  <section class="dashboard-band">
     <div v-reveal class="card">
       <div class="text">
         <div class="title">
@@ -31,7 +31,7 @@
 // The client's pink has no darkened variant and clears neither white nor dark
 // text at body size, so the band carries the colour and the copy sits on a
 // white panel in front of it.
-.band {
+.dashboard-band {
   background: $branding-pink;
   padding: 2rem var(--gutter) 3rem;
 }

@@ -4,7 +4,7 @@
       <p class="k-eyebrow">
         <span aria-hidden="true">//</span> {{ $t('caseStudy.eyebrow') }} <span class="sep" aria-hidden="true">·</span> <span class="client">{{ project.client }}</span>
       </p>
-      <h1>{{ project.headline || project.firstTitle || project.name }}</h1>
+      <h1><span class="brace" aria-hidden="true">{</span> {{ project.headline || project.firstTitle || project.name }} <span class="brace" aria-hidden="true">}</span></h1>
       <p v-if="outcome" class="k-lead outcome">{{ outcome }}</p>
     </div>
 
@@ -33,7 +33,7 @@
       </div>
     </dl>
 
-    <figure v-reveal class="k-content cover">
+    <figure v-reveal class="k-content cover" :style="{ '--cover-name': `cover-${project.id}` }">
       <NuxtImg
         :src="project.mainImg"
         :alt="$t('caseStudy.coverAlt', { client: project.client })"
@@ -96,7 +96,8 @@ const live = computed(() => {
 .title {
   display: grid;
   gap: 1.25rem;
-  h1 { font-size: var(--fs-h1); max-width: 20ch; }
+  // one step under the display size so a long headline holds to three lines
+  h1 { font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3.4rem); max-width: 22ch; line-height: 1.1; }
   .sep { color: var(--text-muted); margin-inline: 0.35rem; }
   .client { color: var(--text-strong); }
 }
@@ -108,13 +109,15 @@ const live = computed(() => {
 }
 
 // On the wide grid the title owns row 1; the meta list and the cover share row 2.
+// On phones the work comes right after the title and the spec sheet follows it.
 .meta {
   margin: 0;
   display: grid;
   gap: 0;
   border-top: 1px solid var(--line);
   font-family: var(--font-mono);
-  @media (min-width: 900px) { grid-row: 2; }
+  order: 3;
+  @media (min-width: 900px) { grid-row: 2; order: 0; }
 
   .row {
     display: grid;
@@ -143,7 +146,9 @@ const live = computed(() => {
 .cover {
   margin: 0;
   aspect-ratio: 3 / 2;
-  @media (min-width: 900px) { grid-row: 2; }
+  order: 2;
+  view-transition-name: var(--cover-name);
+  @media (min-width: 900px) { grid-row: 2; order: 0; }
   overflow: hidden;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
