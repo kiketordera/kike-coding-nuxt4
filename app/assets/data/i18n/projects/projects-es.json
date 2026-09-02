@@ -10,10 +10,16 @@
         "color_title": "white",
         "url": "/projects/value-villages",
         "intro": {
-            "coverImg": "",
-            "services": [],
-            "tech": [],
-            "year": "",
+            "coverImg": "/img/projects/vv/value-villages.png",
+            "services": [
+                "Desarrollo full-stack",
+                "Diseño UI"
+            ],
+            "tech": [
+                "Vue.js, Bootstrap",
+                "Raspberry Pi (servidor sin conexión)"
+            ],
+            "year": "2018–2020",
             "url": ""
         },
         "imagesType": "mobile",
@@ -24,7 +30,10 @@
         "secondDescription": [],
         "secondGroupImages": [],
         "titleSEO": "Value Villages - Empoderando Comunidades",
-        "descriptionSEO": "Descubre cómo Value Villages está transformando comunidades a través de soluciones innovadoras e iniciativas colaborativas."
+        "descriptionSEO": "Descubre cómo Value Villages está transformando comunidades a través de soluciones innovadoras e iniciativas colaborativas.",
+        "role": "Desarrollador full-stack y diseñador UI",
+        "headline": "Iniciar sesión sin contraseñas, para personas que no saben leer",
+        "outcome": "Una plataforma para ONG en seis idiomas que funciona sin conexión en una Raspberry Pi. Hack for Good 2018."
     },
     {
         "id": 1,
@@ -88,7 +97,10 @@
             "/img/projects/oculid/carousel/tutorial8.svg"
         ],
         "titleSEO": "Oculid - Redefiniendo el Análisis de Experiencia de Usuario",
-        "descriptionSEO": "Explora Oculid, una aplicación innovadora que captura interacciones de usuario en tiempo real con precisión y ética."
+        "descriptionSEO": "Explora Oculid, una aplicación innovadora que captura interacciones de usuario en tiempo real con precisión y ética.",
+        "role": "Desarrollador móvil senior",
+        "headline": "Investigación UX con eye-tracking desde la cámara del móvil",
+        "outcome": "Apps en Swift y Flutter que capturan mapas de calor, toques y scroll — con consentimiento informado."
     },
     {
         "id": 2,
@@ -107,7 +119,7 @@
             ],
             "tech": [
                 "Golang, Docker,",
-                "Vue.js, TypesScript"
+                "Vue.js, TypeScript"
             ],
             "year": "2021",
             "url": "https://eva.xyz/"
@@ -164,17 +176,17 @@
         "color_title": "white",
         "url": "/projects/action-coast",
         "intro": {
-            "coverImg": "/img/projects/oculid/background.png",
+            "coverImg": "/img/projects/action-coast/background.jpeg",
             "services": [
                 "Desarrollo Web",
                 "Desarrollo de Aplicaciones"
             ],
             "tech": [
-                "Vue.js, TypesScript,",
+                "Vue.js, TypeScript,",
                 "Flutter, Dart"
             ],
             "year": "2022",
-            "url": "http://ac.com"
+            "url": ""
         },
         "imagesType": "mobile",
         "firstTitle": "Sumérgete en las Joyas Costeras Ocultas",

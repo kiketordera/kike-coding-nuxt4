@@ -7,7 +7,7 @@
           {{ $t('reportsSection.title', { reports: $t('reportsSection.reports'), analysis: $t('reportsSection.analysis') }) }}
         </p>
       </div>
-      <div data-aos="zoom-out-up" class="info">
+      <div class="info">
         <p>
           {{ $t('reportsSection.description1') }}
         </p>
@@ -21,10 +21,10 @@
           {{ $t('reportsSection.description4') }}
         </p>
       </div>
-      <div data-aos="zoom-out-up" class="box-img">
+      <div class="box-img">
         <NuxtImg src="/img/vv/excel.png" class="-mt-8 mb-3" alt="" />
       </div>
-      <div data-aos="zoom-out-up" class="info">
+      <div class="info">
         <p>
           {{ $t('reportsSection.excelDescription') }}
         </p>

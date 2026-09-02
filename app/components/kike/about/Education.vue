@@ -1,6 +1,6 @@
 <template>
   <div class="program">
-    <h3 data-aos="fade-up">
+    <h3>
       {{ $t('educationSection.title') }}
     </h3>
     <div class="edu">

@@ -1,9 +1,9 @@
 <template>
   <section>
-    <h2 data-aos="zoom-out-up">
+    <h2>
       {{ $t('technologiesSection.title') }}
     </h2>
-  <div data-aos="zoom-out-up" class="card">
+  <div class="card">
     <div class="card-items">
       <h4 class="vue">
         {{ $t('technologiesSection.vue.title') }}

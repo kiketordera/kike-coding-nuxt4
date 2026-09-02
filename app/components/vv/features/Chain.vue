@@ -7,7 +7,7 @@
           {{ $t('trackItemsSection.title', { items: $t('trackItemsSection.items') }) }}
         </p>
       </div>
-      <div data-aos="zoom-out-up" class="info">
+      <div class="info">
         <p>
           {{ $t('trackItemsSection.description1') }}
         </p>

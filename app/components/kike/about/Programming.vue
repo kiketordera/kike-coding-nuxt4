@@ -1,121 +1,121 @@
 <template>
   <div class="program">
-    <h3 data-aos="fade-up">
+    <h3>
       Coding
     </h3>
     <div class="skills">
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/swift-language.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/swift-language.svg" alt="">
+        <span>
           Swift
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/swiftui.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/swiftui.svg" alt="">
+        <span>
           SwiftUI
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/dart-language.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/dart-language.svg" alt="">
+        <span>
           Dart
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/flutter-language.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/flutter-language.svg" alt="">
+        <span>
           Flutter
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/html-language.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/html-language.svg" alt="">
+        <span>
           HTML
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/css-style.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/css-style.svg" alt="">
+        <span>
           CSS/SASS
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/tailwind.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/tailwind.svg" alt="">
+        <span>
           Tailwind
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/js.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/js.svg" alt="">
+        <span>
           JavaScript
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/typescript-language.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/typescript-language.svg" alt="">
+        <span>
           TypeScript
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/vue-language.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/vue-language.svg" alt="">
+        <span>
           Vue.js
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/nuxt.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/nuxt.svg" alt="">
+        <span>
           Nuxt
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/node.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/node.svg" alt="">
+        <span>
           Node.js
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/docker.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/docker.svg" alt="">
+        <span>
           Docker
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/firebase.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/firebase.svg" alt="">
+        <span>
           Firebase
         </span>
       </div>
 
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/go-language.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/go-language.svg" alt="">
+        <span>
           Golang
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/java-language.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/java-language.svg" alt="">
+        <span>
           JAVA
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/ux.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/ux.svg" alt="">
+        <span>
           UX
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/figma-icon.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/figma-icon.svg" alt="">
+        <span>
           Figma
         </span>
       </div>
       <div>
-        <img data-aos="zoom-in-left" src="~assets/svg/kk/ui.svg" alt="">
-        <span data-aos="zoom-in-right">
+        <img src="~assets/svg/kk/ui.svg" alt="">
+        <span>
           UI
         </span>
       </div>

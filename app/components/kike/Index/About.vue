@@ -1,77 +1,23 @@
 <template>
-  <section id="about">
-    <div class="about">
-      <h2 data-aos="fade-up">{{ $t("aboutSection.title") }}</h2>
-      <div class="info">
-        <p>
-          {{ $t("introSection.passionate") }}
-          <span class="blue">{{ $t("introSection.mobileDeveloper") }}</span>
-          {{ $t("introSection.withExpertise") }}
-          <span class="orange">{{ $t("introSection.uxUiDesign") }}</span
-          >,
-          {{ $t("introSection.specializing") }}
-        </p>
-        <p>
-          {{ $t("introSection.skills") }}
-        </p>
-        <p>
-          {{ $t("introSection.innovate") }}
-        </p>
-        <p data-aos="zoom-in-right">
-          {{ $t("introSection.build") }}
-          <br>
-          <span class="blue">{{ $t("introSection.blend") }}</span>
-        </p>
-        <p>
-          {{ $t("introSection.collaborate") }}
-        </p>
-        <br>
-        <NuxtLink data-aos="fade-down" href="/about">
-          {{ $t("introSection.readMore") }}
-        </NuxtLink>
+  <section id="about-short" class="k-section">
+    <div class="k-container k-grid">
+      <div v-reveal class="k-label">
+        <p class="k-marker"><span class="sl" aria-hidden="true">//</span> {{ $t('v2.about.marker') }}</p>
+        <h2 class="k-title"><span class="brace">{</span> {{ $t('v2.about.title') }}&nbsp;<span class="brace">}</span></h2>
+      </div>
+      <div v-reveal class="k-content body">
+        <p class="k-lead">{{ $t('v2.about.body') }}</p>
+        <NuxtLink to="/about" class="k-link">{{ $t('v2.about.more') }} →</NuxtLink>
       </div>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-section {
-  @apply w-full;
-
-  .about {
-    @apply max-w-6xl mx-auto lg:flex lg:flex-row flex-col py-36 w-full lg:mx-auto px-4;
-
-    h2 {
-      @include title-kike-section;
-    }
-
-    .info {
-      @apply lg:w-3/4 w-full text-justify;
-      color: $h2-color;
-
-      p {
-        @apply lg:text-lg my-5 items-start;
-        &:first-of-type {
-          @apply mt-0;
-        }
-        span {
-          &.blue {
-            color: $sea-serpent;
-          }
-          &.orange {
-            color: $light-salmon;
-          }
-        }
-      }
-
-      a {
-        @include button-base;
-        @apply mt-4;
-        background-color: $font-color;
-        color: $background-color;
-        font-weight: 600;
-      }
-    }
-  }
+.body {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
+  .k-lead { font-family: var(--font-text); font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem); line-height: 1.45; max-width: 40ch; }
 }
 </style>

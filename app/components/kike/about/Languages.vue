@@ -1,9 +1,9 @@
 <template>
   <div class="languages">
-    <h3 data-aos="fade-up">
+    <h3>
       {{ $t('languagesSection.title') }}
     </h3>
-    <div data-aos="zoom-in-down" class="expert">
+    <div class="expert">
       <div class="lang">
         <div>
           <img src="~assets/svg/kk/spanish.svg" alt="">

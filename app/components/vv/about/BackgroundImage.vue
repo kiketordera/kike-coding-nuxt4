@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtImg data-aos="fade-right" src="/img/vv/everywhere-en.png" alt="" class="background-img" />
+    <NuxtImg src="/img/vv/everywhere-en.png" alt="" class="background-img" />
   </div>
 </template>
 

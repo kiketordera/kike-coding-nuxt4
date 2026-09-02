@@ -10,10 +10,16 @@
         "color_title": "white",
         "url": "/projects/value-villages",
         "intro": {
-            "coverImg": "",
-            "services": [],
-            "tech": [],
-            "year": "",
+            "coverImg": "/img/projects/vv/value-villages.png",
+            "services": [
+                "Full-stack development",
+                "UI design"
+            ],
+            "tech": [
+                "Vue.js, Bootstrap",
+                "Raspberry Pi (offline server)"
+            ],
+            "year": "2018–2020",
             "url": ""
         },
         "imagesType": "mobile",
@@ -24,7 +30,10 @@
         "secondDescription": [],
         "secondGroupImages": [],
         "titleSEO": "Value Villages - Empowering Communities",
-        "descriptionSEO": "Discover how Value Villages is transforming communities through innovative solutions and collaborative initiatives."
+        "descriptionSEO": "Discover how Value Villages is transforming communities through innovative solutions and collaborative initiatives.",
+        "role": "Full-stack developer & UI designer",
+        "headline": "Login without passwords, for people who cannot read",
+        "outcome": "An NGO platform in six languages that runs offline on a Raspberry Pi. Hack for Good 2018."
     },
     {
         "id": 1,
@@ -88,7 +97,10 @@
             "/img/projects/oculid/carousel/tutorial8.svg"
         ],
         "titleSEO": "Oculid - Redefining User Experience Analysis",
-        "descriptionSEO": "Explore Oculid, a groundbreaking application that captures real-time user interactions with precision and ethics."
+        "descriptionSEO": "Explore Oculid, a groundbreaking application that captures real-time user interactions with precision and ethics.",
+        "role": "Senior mobile developer",
+        "headline": "Eye-tracking UX research from a phone camera",
+        "outcome": "Swift and Flutter apps that capture heat maps, taps and scrolls — with informed consent."
     },
     {
         "id": 2,
@@ -107,7 +119,7 @@
             ],
             "tech": [
                 "Golang, Docker,",
-                "Vue.js, TypesScript"
+                "Vue.js, TypeScript"
             ],
             "year": "2021",
             "url": "https://eva.xyz/"
@@ -164,17 +176,17 @@
         "color_title": "white",
         "url": "/projects/action-coast",
         "intro": {
-            "coverImg": "/img/projects/oculid/background.png",
+            "coverImg": "/img/projects/action-coast/background.jpeg",
             "services": [
                 "Web Development",
                 "App Development"
             ],
             "tech": [
-                "Vue.js, TypesScript,",
+                "Vue.js, TypeScript,",
                 "Flutter, Dart"
             ],
             "year": "2022",
-            "url": "http://ac.com"
+            "url": ""
         },
         "imagesType": "mobile",
         "firstTitle": "Dive into Hidden Coastal Gems",

@@ -10,10 +10,16 @@
         "color_title": "white",
         "url": "/projects/value-villages",
         "intro": {
-            "coverImg": "",
-            "services": [],
-            "tech": [],
-            "year": "",
+            "coverImg": "/img/projects/vv/value-villages.png",
+            "services": [
+                "Développement full-stack",
+                "Design UI"
+            ],
+            "tech": [
+                "Vue.js, Bootstrap",
+                "Raspberry Pi (serveur hors ligne)"
+            ],
+            "year": "2018–2020",
             "url": ""
         },
         "imagesType": "mobile",
@@ -24,7 +30,10 @@
         "secondDescription": [],
         "secondGroupImages": [],
         "titleSEO": "Value Villages - Autonomiser les Communautés",
-        "descriptionSEO": "Découvrez comment Value Villages transforme les communautés grâce à des solutions innovantes et des initiatives collaboratives."
+        "descriptionSEO": "Découvrez comment Value Villages transforme les communautés grâce à des solutions innovantes et des initiatives collaboratives.",
+        "role": "Développeur full-stack et designer UI",
+        "headline": "Se connecter sans mot de passe, pour des personnes qui ne savent pas lire",
+        "outcome": "Une plateforme pour ONG en six langues qui fonctionne hors ligne sur un Raspberry Pi. Hack for Good 2018."
     },
     {
         "id": 1,
@@ -88,7 +97,10 @@
             "/img/projects/oculid/carousel/tutorial8.svg"
         ],
         "titleSEO": "Oculid - Redéfinir l'Analyse de l'Expérience Utilisateur",
-        "descriptionSEO": "Découvrez Oculid, une application révolutionnaire qui capture les interactions des utilisateurs en temps réel avec précision et éthique."
+        "descriptionSEO": "Découvrez Oculid, une application révolutionnaire qui capture les interactions des utilisateurs en temps réel avec précision et éthique.",
+        "role": "Développeur mobile senior",
+        "headline": "De la recherche UX par eye-tracking avec la caméra d'un téléphone",
+        "outcome": "Des apps Swift et Flutter qui capturent cartes de chaleur, touchers et défilements — avec consentement éclairé."
     },
     {
         "id": 2,
@@ -107,7 +119,7 @@
             ],
             "tech": [
                 "Golang, Docker,",
-                "Vue.js, TypesScript"
+                "Vue.js, TypeScript"
             ],
             "year": "2021",
             "url": "https://eva.xyz/"
@@ -164,17 +176,17 @@
         "color_title": "white",
         "url": "/projects/action-coast",
         "intro": {
-            "coverImg": "/img/projects/oculid/background.png",
+            "coverImg": "/img/projects/action-coast/background.jpeg",
             "services": [
                 "Développement Web",
                 "Développement d'Applications"
             ],
             "tech": [
-                "Vue.js, TypesScript,",
+                "Vue.js, TypeScript,",
                 "Flutter, Dart"
             ],
             "year": "2022",
-            "url": "http://ac.com"
+            "url": ""
         },
         "imagesType": "mobile",
         "firstTitle": "Plongez dans les Trésors Côtiers Cachés",

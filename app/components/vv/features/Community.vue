@@ -2,13 +2,13 @@
   <section>
     <div class="community">
       <div class="title">
-        <img data-aos="fade-right" src="~/assets/svg/vv/hunt.svg" alt="">
-        <p data-aos="fade-left">
+        <img src="~/assets/svg/vv/hunt.svg" alt="">
+        <p>
           {{ $t('communitySection.title', { community: $t('communitySection.community'), people: $t('communitySection.people') }) }}
         </p>
       </div>
 
-      <div data-aos="zoom-out-up" class="info">
+      <div class="info">
         <p>
           {{ $t('communitySection.description1') }}
         </p>
@@ -20,10 +20,10 @@
         </p>
       </div>
 
-      <div data-aos="zoom-out-up" class="structure">
+      <div class="structure">
         <NuxtImg src="/img/vv/graph.png" alt="" />
       </div>
-      <p data-aos="fade-up" class="content">
+      <p class="content">
         {{ $t('communitySection.footer') }}
       </p>
     </div>

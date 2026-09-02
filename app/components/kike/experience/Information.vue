@@ -1,9 +1,9 @@
 <template>
   <div class="info">
-    <h2 data-aos="fade-right">
+    <h2>
       {{ props.title }}
     </h2>
-    <div data-aos="fade-left">
+    <div>
       <p v-for="d in props.description" :key="d">
         {{ d }}
       </p>

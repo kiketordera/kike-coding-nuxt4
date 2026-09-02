@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div data-aos="zoom-out-up" class="offline-mode">
+    <div class="offline-mode">
       <div class="title">
         <img src="~assets/svg/vv/wifi.svg" alt="">
         <p>

@@ -1,0 +1,63 @@
+// Design tokens — the single source of truth for colour, type, space and motion.
+// Components read these custom properties; nothing else declares a colour or a size.
+:root {
+  // Surfaces (one dark, one raised, hairlines — no pure black anywhere)
+  --bg: #131212;
+  --surface: #1C1B1B;
+  --surface-2: #242222;
+  --line: rgba(255, 255, 255, 0.10);
+  --line-strong: rgba(255, 255, 255, 0.18);
+
+  // Text (muted is 5.3:1 on --bg)
+  --text-strong: #F2F0EC;
+  --text: #C9C5BF;
+  --text-muted: #8F8B85;
+
+  // The brand triad, in the logo's own values. One job each:
+  // teal = interactive (links, hover, focus, active nav); yellow = the single primary CTA;
+  // salmon = emphasis and the { } braces.
+  --teal: #00E1DD;
+  --salmon: #F9A077;
+  --yellow: #FDD403;
+  --on-accent: #131212;
+  --teal-soft: rgba(0, 225, 221, 0.14);
+  --salmon-soft: rgba(249, 160, 119, 0.16);
+  --yellow-soft: rgba(253, 212, 3, 0.14);
+
+  // Type: mono is the voice of the brand (display, headings, nav, labels, braces);
+  // the text face steps in only for paragraphs longer than two lines.
+  --font-mono: 'Source Code Pro', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --font-text: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  // Six fluid sizes with paired leading and tracking
+  --fs-display: clamp(2.75rem, 1rem + 7vw, 7.5rem);
+  --fs-h1: clamp(2.25rem, 1.5rem + 3vw, 4rem);
+  --fs-h2: clamp(1.75rem, 1.25rem + 1.6vw, 2.5rem);
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  --fs-lg: 1.25rem;
+  --fs-md: 1.0625rem;
+  --fs-sm: 0.9375rem;
+  --fs-xs: 0.8125rem;
+  --lh-tight: 0.95;
+  --lh-snug: 1.2;
+  --lh-body: 1.6;
+  --track-display: -0.035em;
+  --track-heading: -0.02em;
+  --track-label: 0.1em;
+
+  // Space: three section rhythms, one block, one stack
+  --space-section: clamp(5rem, 3rem + 7vw, 10rem);
+  --space-block: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
+  --space-stack: 1.5rem;
+  --container: 72rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --grid-gap: clamp(1rem, 2.5vw, 2rem);
+  --nav-h: 64px;
+
+  // Shape and motion
+  --radius: 3px;
+  --radius-lg: 8px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur: 650ms;
+}

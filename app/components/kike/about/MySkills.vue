@@ -1,11 +1,11 @@
 <template>
   <section>
     <div class="skills">
-      <h2 data-aos="fade-up">
+      <h2>
     {{ $t('skillsSection.title') }}
   </h2>
       <div class="info">
-        <p data-aos="zoom-in-right">
+        <p>
           {{ $t('skillsSection.description') }}        </p>
         <kike-about-Education />
         <kike-about-Languages />

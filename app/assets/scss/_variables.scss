@@ -1,44 +1,47 @@
-$example-color: #e3a;
-$background-color: #2D2A2A;
-$font-color: #c3892d;
-$hr-color: #ffffff;
-$button-color: #f25e5e;
-$footer-color: #707070;
-$team-color: #111111;
-$form-color: #231f20;
-$areas-color: #f6f6f6;
-$radio-color: #484848;
-$success-color: #15e44c;
-$background-color: #595959;
-$font-color: #00E1DD;
-$title-color: #F9A077;
-$button-color: #FDD403;
-$css-color: #C92121;
-$html-color: #6165D9;
-$angular-color: #00CD5E;
-$vue-color: #00E0FF;
-$jquery-color: #B800C8;
-$boostrap-color: #9B3434;
-$node-color: #F9A077;
-$h2-color: #CCCCCC;
+// SCSS-side aliases of the design tokens, for the components that still use Sass
+// variables. Values mirror _tokens.scss exactly; new code should read the custom
+// properties (var(--teal)) directly.
 
-// Branding colors
-$light-salmon: #F89F76;
-$cyber-yellow: #FCD405;
-$sea-serpent: #55C5CA;
-$dark-gray: #2D2A2A;
-$light-gray: #5A5959;
+// Brand triad (the logo's values)
+$sea-serpent: #00E1DD;
+$light-salmon: #F9A077;
+$cyber-yellow: #FDD403;
 
-// Branding colors VV
+// Surfaces and text
+$background: #131212;
+$surface: #1C1B1B;
+$text-strong: #F2F0EC;
+$text: #C9C5BF;
+$text-muted: #8F8B85;
+
+// Legacy names still referenced by not-yet-migrated components — all point at the
+// token values above so nothing renders in an off-brand colour.
+$font-color: $sea-serpent;
+$title-color: $light-salmon;
+$button-color: $cyber-yellow;
+$h2-color: $text;
+$hr-color: $text-strong;
+$footer-color: $text-muted;
+$light-gray: $text-muted;
+$dark-gray: $surface;
+$team-color: $background;
+$background-color: $text-muted;
+
+// Value Villages — the client's own palette, used only on /projects/value-villages/**
 $branding-green: #63B190;
 $branding-red: #CF1F26;
 $branding-pink: #ED037C;
 $branding-blue: #00A3D2;
 $branding-orange: #FF8F00;
+// Darkened variants that pass 4.5:1 with white text, for full-bleed bands
+$branding-green-deep: #3E8C6A;
+$branding-blue-deep: #0079A3;
 
-// Fonts
-$nunito-regular: 'Nunito Regular';
-$source-code-regular: 'Source Code Pro Regular';
-$source-code-semibold: 'Source Code Pro SemiBold';
-$source-code-bold: 'Source Code Pro Bold';
-$source-code-black: 'Source Code Pro Black';
+// Font families — one name per family; pick weight with font-weight
+$font-mono: 'Source Code Pro', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+$font-text: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+$nunito-regular: 'Nunito', 'Source Sans 3', system-ui, sans-serif;
+$source-code-regular: $font-mono;
+$source-code-semibold: $font-mono;
+$source-code-bold: $font-mono;
+$source-code-black: $font-mono;

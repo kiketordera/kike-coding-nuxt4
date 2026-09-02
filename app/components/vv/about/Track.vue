@@ -2,12 +2,12 @@
   <section>
     <div class="system">
       <div class="title">
-        <img data-aos="fade-left" src="~/assets/svg/vv/qr.svg" alt="">
-        <p data-aos="fade-up">
+        <img src="~/assets/svg/vv/qr.svg" alt="">
+        <p>
           {{ $t('trackSystemSection.title') }}
         </p>
       </div>
-      <div data-aos="fade-up" class="info">
+      <div class="info">
         <p>
           {{ $t('trackSystemSection.trackProcess') }}
         </p>

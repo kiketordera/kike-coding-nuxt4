@@ -7,7 +7,7 @@
           {{ $t('stepByStepSection.title', { step: $t('stepByStepSection.step'), tutorials: $t('stepByStepSection.tutorials') }) }}
         </p>
       </div>
-      <div data-aos="zoom-out-up" class="info">
+      <div class="info">
         <p>
           {{ $t('stepByStepSection.description1') }}
         </p>
@@ -19,19 +19,19 @@
         </p>
       </div>
       <div class="box-img mt-4">
-        <div data-aos="zoom-in-right" class="details">
+        <div class="details">
           <NuxtImg src="/img/vv/system.png" alt="" />
           <p>
             {{ $t('stepByStepSection.createCourses') }}
           </p>
         </div>
-        <div data-aos="zoom-in-up" class="details">
+        <div class="details">
           <NuxtImg src="/img/vv/vikapu.png" alt="" />
           <p>
             {{ $t('stepByStepSection.guidingSteps') }}
           </p>
         </div>
-        <div data-aos="zoom-in-left" class="details dis">
+        <div class="details dis">
           <NuxtImg src="/img/vv/rings.png" alt="" />
           <p>
             {{ $t('stepByStepSection.records') }}

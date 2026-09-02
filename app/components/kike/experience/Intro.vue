@@ -1,35 +1,35 @@
 <template>
   <section>
     <div class="main">
-      <h2 data-aos="fade-up">
+      <h2>
         {{ props.client }}
       </h2>
       <hr>
       <div class="overview">
         <div class="items">
-          <span data-aos="zoom-in-up">{{ $t('experience.intro.labels.services') }}</span>
-          <ul data-aos="zoom-in-right">
+          <span>{{ $t('experience.intro.labels.services') }}</span>
+          <ul>
             <li v-for="ser in props.services" :key="ser">
               {{ ser }}
             </li>
           </ul>
         </div>
         <div class="items">
-          <span data-aos="zoom-in-up">{{ $t('experience.intro.labels.tech') }}</span>
-          <ul data-aos="zoom-in-right">
+          <span>{{ $t('experience.intro.labels.tech') }}</span>
+          <ul>
             <li v-for="t in props.tech" :key="t">
               {{ t }}
             </li>
           </ul>
         </div>
         <div class="items">
-          <span data-aos="zoom-in-up">{{ $t('experience.intro.labels.year') }}</span>
-          <p data-aos="zoom-in-right">
+          <span>{{ $t('experience.intro.labels.year') }}</span>
+          <p>
             {{ props.year }}
           </p>
         </div>
         <div class="items">
-          <span data-aos="zoom-in-up">{{ $t('experience.intro.labels.website') }}</span> <br>
+          <span>{{ $t('experience.intro.labels.website') }}</span> <br>
           <a target="_blank" :href="props.url">{{ props.url }}</a>
         </div>
       </div>

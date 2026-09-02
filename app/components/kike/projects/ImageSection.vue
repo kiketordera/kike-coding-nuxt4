@@ -5,7 +5,7 @@
       :key="img"
       :src="img"
       alt=""
-      data-aos="fade-up"
+     
       :class="{ 'span': isFirst(i) || isLastAndEven(i) }"
     />
   </div>

@@ -189,5 +189,75 @@
       "nextProjectAria": "Next project",
       "allProjectsIconAlt": "All projects icon"
     }
+  },
+  "v2": {
+    "nav": {
+      "work": "Work",
+      "apps": "Apps",
+      "about": "About",
+      "contact": "Contact",
+      "menu": "Menu",
+      "close": "Close",
+      "language": "Language"
+    },
+    "hero": {
+      "eyebrow": "mobile developer & ux/ui engineer — berlin",
+      "name": "Kike Tordera",
+      "positioning": "I design the app and I ship it. Swift and Flutter, end to end — more than ten years of it.",
+      "proof": [
+        "6 apps on the App Store",
+        "ex-Oculid, ex-Circus",
+        "Hack for Good 2018",
+        "Lead developer, Totem Studio"
+      ],
+      "cta": "Book a 20-min call",
+      "seeWork": "See the work",
+      "portraitAlt": "Kike Tordera — half line-art in teal, salmon and yellow, half photograph"
+    },
+    "work": {
+      "marker": "01 work",
+      "title": "Selected work",
+      "intro": "Four projects, each told as the problem, what I did, and what came out of it.",
+      "read": "Read the case study"
+    },
+    "apps": {
+      "marker": "02 apps",
+      "title": "Six on the App Store",
+      "intro": "Six apps on the App Store, designed and shipped end to end.",
+      "open": "Open {name} on the App Store"
+    },
+    "about": {
+      "marker": "03 about",
+      "title": "About",
+      "body": "Mobile developer and UX/UI engineer, based in Berlin. In more than ten years I have built for a university, an NGO platform in six languages, two startups and the studio I now lead — always the design and the code together.",
+      "more": "More about me"
+    },
+    "experience": {
+      "marker": "04 experience",
+      "title": "Experience",
+      "intro": "{years} years, {roles} roles, {countries} countries.",
+      "all": "All",
+      "work": "Work",
+      "volunteer": "Volunteer",
+      "education": "Education",
+      "today": "Today"
+    },
+    "contact": {
+      "marker": "05 contact",
+      "title": "Start a project",
+      "intro": "Tell me what you are building.",
+      "available": "Available for new projects",
+      "localTime": "Berlin, local time",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "linkedin": "LinkedIn",
+      "backToTop": "Back to top",
+      "cta": "Book a 20-min call"
+    },
+    "error": {
+      "title": "Page not found",
+      "body": "There is nothing at this address — it may have moved, or the link was mistyped.",
+      "home": "Back to the start"
+    }
   }
 }

@@ -8,7 +8,7 @@
         </p>
       </div>
       <div class="content">
-        <div data-aos="zoom-out-up" class="info">
+        <div class="info">
           <p>
             {{ $t('decisionSection.description1') }}
           </p>
@@ -23,7 +23,7 @@
             <li>{{ $t('decisionSection.checkFrequency') }}</li>
           </ul>
         </div>
-        <div data-aos="zoom-out-up" class="box-img">
+        <div class="box-img">
           <div class="details">
             <NuxtImg src="/img/vv/car.png" alt="" />
             <p>

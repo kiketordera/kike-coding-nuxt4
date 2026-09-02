@@ -1,17 +1,17 @@
 <template>
   <section>
     <div class="village">
-      <NuxtImg data-aos="zoom-in" src="/img/vv/logo.png" alt="" class="logo" />
-      <h1 data-aos="zoom-in">
+      <NuxtImg src="/img/vv/logo.png" alt="" class="logo" />
+      <h1>
         {{ $t('valueVillagesSection.title') }}
       </h1>
-      <p data-aos="fade-up">
+      <p>
         {{ $t('valueVillagesSection.openSource') }}
       </p>
-      <p data-aos="fade-up">
+      <p>
         {{ $t('valueVillagesSection.customisable') }}
       </p>
-      <p data-aos="fade-up">
+      <p>
         {{ $t('valueVillagesSection.fullSet') }}
       </p>
     </div>

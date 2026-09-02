@@ -2,13 +2,13 @@
   <section>
     <h2>{{ $t('awardsSection.title') }}</h2>
     <div class="award">
-      <p data-aos="zoom-out-up">
+      <p>
       {{ $t('awardsSection.description') }}
     </p>
-      <a data-aos="zoom-out-up" href="https://blogthinkbig.com/">
+      <a href="https://blogthinkbig.com/">
         <NuxtImg src="/img/vv/think-big.jpeg" alt="" />
       </a>
-      <a data-aos="zoom-out-up" href="https://www.fundaciontelefonica.com/">
+      <a href="https://www.fundaciontelefonica.com/">
         <NuxtImg src="/img/vv/telefonica.png" alt="" />
       </a>
     </div>

@@ -1,30 +1,30 @@
 <template>
   <section>
     <div class="about-us">
-      <h2 data-aos="zoom-in-up">
+      <h2>
     {{ $t('aboutSection.title') }}
   </h2>
       <div class="info">
-        <p data-aos="fade-right">
+        <p>
     {{ $t('aboutSection.intro') }}
   </p>
-  <p data-aos="fade-right">
+  <p>
     {{ $t('aboutSection.codingPassion') }}
   </p>
-  <p data-aos="fade-right">
+  <p>
     {{ $t('aboutSection.craftingExperiences') }}
   </p>
-  <p data-aos="fade-right">
+  <p>
     {{ $t('aboutSection.createMagic') }}
   </p>
         <NuxtImg src="/img/kk/kike.jpg" alt="" class="profile" />
-        <button data-aos="zoom-up-down" type="submit">
+        <button type="submit">
     <img src="~assets/svg/kk/resume.svg" alt="">
     <a href="/kike-tordera-cv-human.pdf">
       {{ $t('resumeSection.downloadHuman') }}
     </a>
   </button>
-  <button data-aos="zoom-up-down" type="submit">
+  <button type="submit">
     <img src="~assets/svg/kk/resume.svg" alt="">
     <a href="/kike-tordera-cv-ats.pdf">
       {{ $t('resumeSection.downloadATS') }}

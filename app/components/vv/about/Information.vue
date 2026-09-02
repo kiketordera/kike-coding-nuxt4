@@ -1,5 +1,5 @@
 <template>
-  <div data-aos="fade-up" class="info">
+  <div class="info">
     <p>
       {{ $t('valueVillagesSection.ngoFocus') }}
     </p>

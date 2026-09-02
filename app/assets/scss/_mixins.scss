@@ -1,0 +1,115 @@
+@use './variables' as *;
+
+// Injected into every component's <style lang="scss"> via vite additionalData,
+// so this file may only contain mixins and functions — no CSS output.
+
+// A home section: label column left (4/12), content right (8/12), one vertical rhythm.
+@mixin k-section {
+  padding-block: var(--space-section);
+}
+
+@mixin k-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-block) var(--grid-gap);
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+@mixin k-label { @media (min-width: 900px) { grid-column: 1 / span 4; } }
+@mixin k-content { min-width: 0; @media (min-width: 900px) { grid-column: 5 / span 8; } }
+
+// Small uppercase mono label: "// 01 work"
+@mixin k-marker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+// Section title in the brace device
+@mixin k-title {
+  font-family: var(--font-mono);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-heading);
+  color: var(--text-strong);
+  text-wrap: balance;
+}
+
+// Buttons: primary = the one yellow action per view; ghost = quiet secondary
+@mixin k-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  line-height: 1;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--dur-fast) ease-out,
+    color var(--dur-fast) ease-out,
+    border-color var(--dur-fast) ease-out,
+    transform var(--dur-fast) ease-out;
+
+  &:active { transform: translateY(1px); }
+}
+
+@mixin k-btn-primary {
+  @include k-btn;
+  background: var(--yellow);
+  color: var(--on-accent);
+  &:hover, &:focus-visible { background: #ffe24d; color: var(--on-accent); }
+}
+
+@mixin k-btn-ghost {
+  @include k-btn;
+  background: transparent;
+  color: var(--text-strong);
+  border-color: var(--line-strong);
+  &:hover, &:focus-visible { border-color: var(--teal); color: var(--teal); }
+}
+
+// Mono text link with a hairline underline
+@mixin k-link {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: color var(--dur-fast) ease-out;
+  &:hover, &:focus-visible { color: var(--text-strong); }
+}
+
+// Kept for components that have not been migrated yet
+@mixin button-base { @include k-btn-primary; }
+
+@mixin title-kike-section { @include k-title; }
+
+@mixin title-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  img { height: 50px; }
+  p { font-size: 2.4rem; text-align: center; span { color: #f7941d; } }
+  @media screen and (max-width: 768px) {
+    p { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    img { width: 2.5rem; height: auto; }
+  }
+}

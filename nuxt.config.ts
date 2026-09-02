@@ -53,7 +53,6 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",
     "@pinia/nuxt",
-    "nuxt-aos",
     "@nuxt/eslint",
     // Analisis
     "nuxt-gtag",
@@ -61,9 +60,6 @@ export default defineNuxtConfig({
     // Optimizations
     "@nuxt/image",
   ],
-  build: {
-    transpile: ["vuetify"],
-  },
   // SCSS
   vite: {
     build: {
@@ -78,17 +74,22 @@ export default defineNuxtConfig({
         scss: {
           additionalData: `
           @use "@/assets/scss/variables" as *;
-          @use "@/assets/scss/base" as *;
+          @use "@/assets/scss/mixins" as *;
           `,
         },
       },
     },
   },
-  css: ["vuetify/lib/styles/main.sass", "@/assets/scss/main.scss" ],
+  css: ["@/assets/scss/main.scss"],
   app: {
+    pageTransition: { name: "page", mode: "out-in" },
     head: {
-      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
-      titleTemplate: "",
+      link: [
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+        { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      ],
+      titleTemplate: "%s",
       style: [
         { innerHTML: "html, body { background-color: #131212; }" },
         { innerHTML: "html, body { overflow-x: hidden; }" },
@@ -207,11 +208,9 @@ export default defineNuxtConfig({
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_MEASUREMENTID,
   },
-  ogImage: {
-    defaults: {
-      extension: "jpeg",
-    },
-  },
+  // The screenshot-based OG renderer cannot run in SPA mode; the share image is a
+  // static /og-image.jpg set in app.vue instead.
+  ogImage: { enabled: false },
   site: {
     siteUrl: ContactInformation.fullURL,
   },

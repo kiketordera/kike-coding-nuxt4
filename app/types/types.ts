@@ -7,6 +7,10 @@ export interface WhatsAppState {
 export interface Project {
   id: number;
   name: string;
+  /** Case-study one-liners shown on the home page work list (optional per locale) */
+  role?: string;
+  headline?: string;
+  outcome?: string;
   logo: string;
   mainImg: string;
   client: string;

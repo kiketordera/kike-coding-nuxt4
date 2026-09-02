@@ -1,65 +1,164 @@
 @use './variables' as *;
+@use './mixins' as *;
 
-
-* {
-    scroll-behavior: smooth;
-  }
-
-@mixin title-section {
-     display: flex;
-      justify-content: center;
-      justify-items: center;
-      padding-bottom: 1rem;
-      align-items: center;
-      gap: 2rem;
-      align-items: center;
-
-      img {
-        height: 50px;
-      }
-
-      p {
-        font-size: 2.4rem;
-        text-align: center;
-
-        span {
-          color: #f7941d;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-        p {
-          @apply text-xl mb-2;
-        }
-
-        img {
-          @apply w-10 h-auto;
-        }
-      }
-  }
-
-// Predefined Break-points
-
-$mediaMaxWidth: 1260px;
-$mediaMaxWidth: 960px;
-$mediaMinWidth: 480px;
-
-
-.txt {
-  &-blue {
-    color: $sea-serpent;
-  }
+// ---------------------------------------------------------------------------
+// Root: the type system is declared exactly once, here.
+// ---------------------------------------------------------------------------
+html {
+  font-family: var(--font-text);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
-@mixin button-base {
-  @apply text-base uppercase px-8 py-2.5 my-8 text-center lg:w-auto w-full;
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
-@mixin title-kike-section {
-  @apply lg:text-4xl text-xl whitespace-nowrap tracking-wider mb-4 w-1/2;
-  font-family: "Source Code Pro SemiBold";
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-mono);
+  color: var(--text-strong);
+  margin: 0;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-heading);
+  text-wrap: balance;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+  text-align: start;
+  text-wrap: pretty;
+  max-width: 65ch;
+}
+p + p { margin-top: 0.9em; }
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+  transition: color var(--dur-fast) ease-out;
+}
+
+button { font: inherit; }
+img, svg, video { max-width: 100%; height: auto; display: block; }
+[id] { scroll-margin-top: calc(var(--nav-h) + 1rem); }
+::selection { background: var(--yellow); color: var(--on-accent); }
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.brace { color: var(--salmon); font-weight: 400; }
+
+// ---------------------------------------------------------------------------
+// Layout primitives
+// ---------------------------------------------------------------------------
+.k-container { max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.k-section { @include k-section; }
+.k-grid { @include k-grid; }
+.k-label { @include k-label; }
+.k-content { @include k-content; }
+.k-marker { @include k-marker; .sl { color: var(--teal); } }
+.k-eyebrow { @include k-marker; color: var(--salmon); }
+.k-title { @include k-title; }
+.k-lead { font-size: var(--fs-lg); color: var(--text); }
+.k-muted { color: var(--text-muted); }
+.k-mono { font-family: var(--font-mono); }
+.k-btn { @include k-btn; }
+.k-btn--primary { @include k-btn-primary; }
+.k-btn--ghost { @include k-btn-ghost; }
+.k-link { @include k-link; }
+.k-hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
+
+.k-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
   font-weight: 600;
-  color: $h2-color;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  line-height: 1.4;
 }
 
-html, body { background-color: #131212; }
+// ---------------------------------------------------------------------------
+// Motion: one reveal vocabulary (v-reveal directive), one page transition.
+// Reduced-motion users get everything instantly and nothing is ever hidden.
+// ---------------------------------------------------------------------------
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity var(--dur) var(--ease-out),
+      transform var(--dur) var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  .page-enter-active, .page-leave-active {
+    transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+  }
+  .page-enter-from { opacity: 0; transform: translateY(12px); }
+  .page-leave-to { opacity: 0; transform: translateY(-8px); }
+}
+
+// ---------------------------------------------------------------------------
+// Third-party surfaces restyled in the system (cookie consent)
+// ---------------------------------------------------------------------------
+.cookieControl__Bar {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-text) !important;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+
+  h2, h3 { font-family: var(--font-mono) !important; font-size: var(--fs-sm) !important; color: var(--text-strong) !important; }
+  p { font-size: var(--fs-sm) !important; color: var(--text) !important; }
+  button {
+    font-family: var(--font-mono) !important;
+    font-weight: 700 !important;
+    font-size: var(--fs-xs) !important;
+    border-radius: var(--radius) !important;
+    border: 1px solid var(--line-strong) !important;
+    background: transparent !important;
+    color: var(--text-strong) !important;
+    transition: border-color var(--dur-fast) ease-out, background-color var(--dur-fast) ease-out;
+    &:first-of-type { background: var(--yellow) !important; color: var(--on-accent) !important; border-color: transparent !important; }
+    &:hover { border-color: var(--teal) !important; }
+  }
+}
+.cookieControl__ControlButton {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  left: calc(12px + env(safe-area-inset-left)) !important;
+  right: auto !important;
+  bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+  z-index: 20 !important;
+  svg { fill: var(--text-muted) !important; }
+}
+.cookieControl__Modal {
+  font-family: var(--font-text) !important;
+  .cookieControl__ModalContent { background: var(--surface) !important; color: var(--text) !important; border: 1px solid var(--line) !important; border-radius: var(--radius-lg) !important;
+    h3 { font-family: var(--font-mono) !important; color: var(--text-strong) !important; }
+    input:checked + button { background-color: var(--teal) !important; }
+    input:not(:checked) + button { background-color: var(--surface-2) !important; }
+    a { color: var(--teal) !important; }
+  }
+}

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div data-aos="zoom-out-up" class="card">
+    <div class="card">
     <div class="card-items">
       <h4 class="golang">
         {{ $t('technologiesSection.golang.title') }}
