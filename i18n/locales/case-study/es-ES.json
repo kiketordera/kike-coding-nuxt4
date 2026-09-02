@@ -1,0 +1,26 @@
+{
+  "caseStudy": {
+    "eyebrow": "caso de estudio",
+    "role": "Rol",
+    "stack": "Stack",
+    "platform": "Plataforma",
+    "year": "Año",
+    "live": "En línea",
+    "problem": "el problema",
+    "built": "lo que construí",
+    "screens": "pantallas",
+    "previous": "anterior",
+    "next": "siguiente",
+    "allWork": "todo el trabajo",
+    "mobile": "Móvil",
+    "web": "Web",
+    "coverAlt": "{client} — portada del proyecto",
+    "mockupAlt": "Mockup {n} de {client}",
+    "screenAlt": "Pantalla {n} de {client}",
+    "prevScreen": "Pantalla anterior",
+    "nextScreen": "Pantalla siguiente",
+    "pager": "Pantalla {n} de {total}",
+    "liveAria": "Abrir {host} en una pestaña nueva",
+    "projectsNav": "Otros casos de estudio"
+  }
+}

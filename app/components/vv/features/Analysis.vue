@@ -1,33 +1,31 @@
 <template>
-  <section>
-    <div class="system">
+  <section v-reveal class="vv-analysis">
+    <div class="inner">
       <div class="title">
-        <img src="~/assets/svg/vv/report.svg" alt="">
-        <p>
+        <img src="~/assets/svg/vv/report.svg" width="59" height="60" alt="">
+        <h2>
           {{ $t('reportsSection.title', { reports: $t('reportsSection.reports'), analysis: $t('reportsSection.analysis') }) }}
-        </p>
+        </h2>
       </div>
       <div class="info">
-        <p>
-          {{ $t('reportsSection.description1') }}
-        </p>
-        <p>
-          {{ $t('reportsSection.description2') }}
-        </p>
-        <p>
-          {{ $t('reportsSection.description3') }}
-        </p>
-        <p>
-          {{ $t('reportsSection.description4') }}
-        </p>
+        <p>{{ $t('reportsSection.description1') }}</p>
+        <p>{{ $t('reportsSection.description2') }}</p>
+        <p>{{ $t('reportsSection.description3') }}</p>
+        <p>{{ $t('reportsSection.description4') }}</p>
       </div>
       <div class="box-img">
-        <NuxtImg src="/img/vv/excel.png" class="-mt-8 mb-3" alt="" />
+        <NuxtImg
+          src="/img/vv/excel.png"
+          width="193"
+          height="259"
+          sizes="193px"
+          format="webp"
+          loading="lazy"
+          alt=""
+        />
       </div>
       <div class="info">
-        <p>
-          {{ $t('reportsSection.excelDescription') }}
-        </p>
+        <p>{{ $t('reportsSection.excelDescription') }}</p>
       </div>
     </div>
   </section>
@@ -35,92 +33,61 @@
 
 <style lang="scss" scoped>
 section {
-  width: 100%;
-  max-width: 56rem;
-  margin: 0 auto;
-  padding: 3rem 0rem;
+  font-family: $nunito-regular;
+  font-weight: 400;
+  color: $background;
+  background-color: white;
+  padding: 4rem var(--gutter);
 
-  .system {
-    margin-bottom: 2rem;
-    font-weight: 400;
+  .inner {
+    max-width: 56rem;
+    margin-inline: auto;
+  }
 
-    .title {
-      display: flex;
-      justify-content: center;
-      justify-items: center;
-      padding-bottom: 1rem;
-      align-items: center;
-      @apply px-4;
+  .title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
 
-      img {
-        height: 60px;
-      }
-
-      p {
-        font-size: 2.4rem;
-        text-align: center;
-        padding-left: 1.5rem;
-        font-weight: 900;
-
-        span {
-          color: #F7941D;
-        }
-
-      }
-
-      @media screen and (max-width: 768px) {
-        p {
-           @apply text-base md:text-xl text-justify;
-        }
-
-        img {
-          @apply w-10 h-auto;
-        }
-      }
+    img {
+      flex: none;
+      width: 59px;
+      height: 60px;
     }
 
-    .info {
-      margin: 0 auto;
-      width: 100%;
-      max-width: 48rem;
-      @apply px-4;
-      p {
-        align-items: center;
-        text-align: justify;
-        font-size: 20px;
-        padding-bottom: 2rem;
-        padding-top: 0.5rem;
-        width: 95%;
-      }
-
-      @media screen and (max-width: 768px) {
-        p {
-          @apply text-base mb-2;
-        }
-
-      }
+    h2 {
+      font-family: $nunito-regular;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.4rem);
+      letter-spacing: 0;
+      color: inherit;
+      text-align: center;
     }
+  }
 
-    .box-img {
-      margin: 0 auto;
-      padding-top: 1rem;
+  .info {
+    max-width: 48rem;
+    margin-inline: auto;
 
-      img {
-        @apply w-10/12;
-        height: auto;
-        max-width: 100%;
-        padding: 0rem 20rem;
-      }
-
-      @media screen and (max-width:700px) {
-        img {
-          @apply px-4 w-12 mx-auto;
-          min-width: 25%;
-
-        }
-      }
+    p {
+      font-size: clamp(1rem, 0.95rem + 0.4vw, 1.25rem);
+      line-height: var(--lh-body);
+      margin-inline: auto;
     }
+  }
 
+  .box-img {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+
+    img {
+      width: min(100%, 193px);
+      height: auto;
+    }
   }
 }
 </style>

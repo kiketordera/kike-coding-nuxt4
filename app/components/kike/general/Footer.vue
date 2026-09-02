@@ -91,7 +91,7 @@ const toTop = () => window.scrollTo({ top: 0, behavior: window.matchMedia('(pref
   padding-block: 1.5rem calc(1.5rem + env(safe-area-inset-bottom));
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
   .mark img { height: 22px; width: auto; opacity: 0.8; }
-  .colophon { font-size: var(--fs-xs); color: var(--text-muted); .me, a { color: var(--teal); } .heart { color: var(--salmon); display: inline-block; } }
+  .colophon { font-size: var(--fs-xs); color: var(--text-muted); .me { color: var(--teal); } a { color: var(--teal); border-bottom: 1px solid currentColor; &:hover { color: var(--text-strong); } } .heart { color: var(--salmon); display: inline-block; } }
   .legal { display: flex; gap: 1.5rem; font-size: var(--fs-xs); a { color: var(--text-muted); &:hover { color: var(--teal); } } .top { margin-left: 0.5rem; } }
 }
 @media (prefers-reduced-motion: no-preference) {

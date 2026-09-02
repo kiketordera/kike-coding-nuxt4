@@ -1,0 +1,19 @@
+{
+  "aboutPage": {
+    "marker": "01 über mich",
+    "portraitAlt": "Kike Tordera, Porträt",
+    "resume": {
+      "label": "lebenslauf",
+      "human": "Lebenslauf für Menschen (PDF)",
+      "ats": "Lebenslauf für ATS-Software (PDF)"
+    },
+    "skills": {
+      "marker": "02 fähigkeiten",
+      "title": "Fähigkeiten"
+    },
+    "education": {
+      "marker": "03 ausbildung",
+      "title": "Ausbildung"
+    }
+  }
+}

@@ -1,85 +1,64 @@
 <template>
-  <section>
-    <div class="card">
-    <div class="card-items">
-      <h4 class="golang">
-        {{ $t('technologiesSection.golang.title') }}
-      </h4>
-      <p>
-        {{ $t('technologiesSection.golang.description') }}
-      </p>
+  <section v-reveal class="vv-cards">
+    <div class="inner">
+      <div class="cards">
+        <article class="card card--golang">
+          <h3>{{ $t('technologiesSection.golang.title') }}</h3>
+          <p>{{ $t('technologiesSection.golang.description') }}</p>
+        </article>
+        <article class="card card--docker">
+          <h3>{{ $t('technologiesSection.docker.title') }}</h3>
+          <p>{{ $t('technologiesSection.docker.description') }}</p>
+        </article>
+        <article class="card card--raspbian">
+          <h3>{{ $t('technologiesSection.raspbian.title') }}</h3>
+          <p>{{ $t('technologiesSection.raspbian.description') }}</p>
+        </article>
+      </div>
     </div>
-    <div class="card-items">
-      <h4 class="docker">
-        {{ $t('technologiesSection.docker.title') }}
-      </h4>
-      <p>
-        {{ $t('technologiesSection.docker.description') }}
-      </p>
-    </div>
-    <div class="card-items">
-      <h4 class="raspbian">
-        {{ $t('technologiesSection.raspbian.title') }}
-      </h4>
-      <p>
-        {{ $t('technologiesSection.raspbian.description') }}
-      </p>
-    </div>
-  </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
 section {
-  max-width: 72rem;
-  width: auto;
-  margin: 0 auto;
-  padding: 1rem 0rem;
+  font-family: $nunito-regular;
+  font-weight: 400;
+  color: $background;
+  background-color: white;
+  padding: 2rem var(--gutter) 4rem;
 
-  .card {
-    display: flex;
-    flex-direction: row;
-    gap: 3.6rem;
-    padding: 8rem 0rem 1rem 1rem;
-
-    .card-items {
-      margin: 2rem 0rem;
-      letter-spacing: 1px;
-
-      h4 {
-        font-size: 1.7rem;
-        text-align: center;
-        margin-bottom: 5px;
-        font-weight: 600;
-
-      }
-
-      .golang {
-        color: #6AD7E5;
-
-      }
-
-      .docker {
-        color: #00A3D2;
-      }
-
-      .raspbian {
-        color: #CF1F26;
-      }
-
-      p {
-        text-align: justify;
-        max-width: 500px;
-        margin: 0 auto;
-      }
-    }
+  .inner {
+    max-width: 72rem;
+    margin-inline: auto;
   }
 
-  @media screen and (max-width: 699px) {
-    .card {
-      flex-direction: column;
-      margin-bottom: 1rem;
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    min-width: 0;
+    padding-top: 1rem;
+    border-top: 3px solid $branding-blue-deep;
+
+    h3 {
+      font-family: $nunito-regular;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0;
+      color: inherit;
+      margin-bottom: 0.5rem;
     }
+
+    p {
+      font-size: var(--fs-md);
+      line-height: var(--lh-body);
+    }
+
+    &--docker { border-top-color: $branding-blue; }
+    &--raspbian { border-top-color: $branding-red; }
   }
 }
 </style>

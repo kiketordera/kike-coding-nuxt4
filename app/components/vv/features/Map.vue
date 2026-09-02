@@ -1,27 +1,30 @@
 <template>
-  <div class="inogro">
+  <section v-reveal class="vv-map">
     <vv-about-Iconography-Languages />
     <div class="map-section">
-      <div class="map">
-        <img src="~/assets/svg/vv/world-map.svg" alt="">
-      </div>
+      <img src="~/assets/svg/vv/world-map.svg" width="1663" height="820" alt="">
     </div>
     <vv-about-Iconography-Languages :reverse="true" />
-  </div>
+  </section>
 </template>
 
-<script>
-
-</script>
-
 <style lang="scss" scoped>
-.inogro {
-    .map-section {
-        width: 100%;
-  max-width: 56rem;
-  margin: 0 auto;
-  padding: 2rem 0rem;
-    }
-}
+section {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: white;
+  padding: 1rem 0;
 
+  .map-section {
+    max-width: 56rem;
+    margin-inline: auto;
+    padding: 2rem var(--gutter);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
 </style>

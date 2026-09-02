@@ -1,91 +1,82 @@
 <template>
-  <section>
-    <div class="gradient">
-      <div class="info">
-        <h2>
-          {{ $t('gradientSection.mindYourStep.title') }}
-        </h2>
-        <p>
-          {{ $t('gradientSection.mindYourStep.description') }}
-        </p>
-        <NuxtImg src="/img/vv/video.png" alt="" />
-      </div>
-      <div class="item">
-        <NuxtImg src="/img/vv/transactions.png" alt="" />
-        <h2>
-          {{ $t('gradientSection.yourProduction.title') }}
-        </h2>
-        <p>
-          {{ $t('gradientSection.yourProduction.description') }}
-        </p>
-      </div>
-      <div class="info dis">
-        <h2>
-          {{ $t('gradientSection.numericalAlphabet.title') }}
-        </h2>
-        <p>
-          {{ $t('gradientSection.numericalAlphabet.description') }}
-        </p>
-        <NuxtImg src="/img/vv/index.png" alt="" />
-      </div>
-      <div class="item dis">
-        <NuxtImg src="/img/vv/track.png" alt="" />
-        <h2>
-          {{ $t('gradientSection.controlledAndSafe.title') }}
-        </h2>
-        <p>
-          {{ $t('gradientSection.controlledAndSafe.description') }}
-        </p>
-      </div>
-    </div>
+  <section class="band">
+    <ul v-reveal.stagger="90" class="gradient">
+      <li class="info">
+        <h2>{{ $t('gradientSection.mindYourStep.title') }}</h2>
+        <p>{{ $t('gradientSection.mindYourStep.description') }}</p>
+        <NuxtImg src="/img/vv/video.png" alt="" width="728" height="1295" sizes="(max-width: 789px) 45vw, 280px" format="webp" loading="lazy" />
+      </li>
+      <li class="item">
+        <NuxtImg src="/img/vv/transactions.png" alt="" width="732" height="1247" sizes="(max-width: 789px) 45vw, 280px" format="webp" loading="lazy" />
+        <h2>{{ $t('gradientSection.yourProduction.title') }}</h2>
+        <p>{{ $t('gradientSection.yourProduction.description') }}</p>
+      </li>
+      <li class="info">
+        <h2>{{ $t('gradientSection.numericalAlphabet.title') }}</h2>
+        <p>{{ $t('gradientSection.numericalAlphabet.description') }}</p>
+        <NuxtImg src="/img/vv/index.png" alt="" width="737" height="1296" sizes="(max-width: 789px) 45vw, 280px" format="webp" loading="lazy" />
+      </li>
+      <li class="item">
+        <NuxtImg src="/img/vv/track.png" alt="" width="733" height="1245" sizes="(max-width: 789px) 45vw, 280px" format="webp" loading="lazy" />
+        <h2>{{ $t('gradientSection.controlledAndSafe.title') }}</h2>
+        <p>{{ $t('gradientSection.controlledAndSafe.description') }}</p>
+      </li>
+    </ul>
   </section>
 </template>
 
-
 <style lang="scss" scoped>
-section {
-  @apply w-full;
-
-  // background: linear-gradient(#89ffc5 0%, rgba(21, 174, 255, 0.83) 33%,
-  //     #35b9ff 47.29%, #6e81ff 100%);
-   background-color: $branding-green;
+// Full-bleed band in the client's green, darkened to the variant that passes
+// 4.5:1 with white text.
+.band {
+  background: $branding-green-deep;
   color: white;
-  text-align: center;
-  max-width: 100%;
+}
+
+.gradient {
+  list-style: none;
   margin: 0 auto;
-  background-position: center;
-  background-size: cover;
-  padding: 0rem 0rem;
+  padding: var(--space-stack) var(--gutter);
+  max-width: var(--container);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  @media (min-width: 790px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
 
-  .gradient {
-    @apply flex flex-row justify-between gap-10 max-w-7xl mx-auto px-4;
+  li {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    text-align: center;
 
-    .info,
-    .item {
-      @apply min-h-full flex flex-col;
-      h2 {
-        @apply text-2xl tracking-wider mt-6;
-        font-weight: 600;
-      }
-
-      p {
-        @apply text-base my-5 px-3;
-      }
-    }
-    .item {
-      @apply align-top;
-    }
-
-    .info {
-      @apply justify-end;
+    h2 {
+      font-size: var(--fs-h3);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-top: 1.5rem;
+      color: inherit;
     }
 
-    .dis {
-      display: flex;
-      @media screen and (max-width: 790px) {
-        display: none;
-      }
+    p {
+      font-size: var(--fs-sm);
+      margin: 1.25rem auto;
+      padding-inline: 0.25rem;
+      max-width: 65ch;
+      text-align: start;
+    }
+
+    img {
+      width: 100%;
+      max-width: 18rem;
+      height: auto;
+      margin-inline: auto;
     }
   }
+
+  .info { justify-content: flex-end; }
+  .item { justify-content: flex-start; }
 }
 </style>

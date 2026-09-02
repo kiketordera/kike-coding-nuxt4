@@ -1,51 +1,58 @@
 <template>
-  <div>
-    <h1>
-      {{ $t('designSection.title') }}
-    </h1>
+  <div class="design">
+    <h1>{{ $t('designSection.title') }}</h1>
+
     <vv-design-Info
-      class="mt-28"
+      class="block"
       icon="lock-color.svg"
       :texts="auth"
       image="authenication.png"
-      :left="true"
+      :width="876"
+      :height="1722"
+      left
       :title="$t('designSection.authTitle')"
     />
-    <vv-design-Dashboard />
+
+    <vv-design-Dashboard class="block" />
+
     <vv-design-Info
-      class="mt-28"
+      class="block"
       icon="alphabet-color.svg"
       :texts="numerical"
       image="design-num.png"
-      :left="true"
+      :width="908"
+      :height="1763"
+      left
       :title="$t('designSection.numericalTitle')"
     />
-    <div class="bg-blue">
+
+    <div class="band block">
       <vv-design-Info
-        class="mt-28"
         icon="performance-bg-blue.svg"
         :texts="performance"
         image="vikapu.png"
-        :left="false"
+        :width="762"
+        :height="1476"
         :title="$t('designSection.performanceTitle')"
       />
     </div>
+
     <vv-design-Info
-      class="mt-28"
+      class="block"
       icon="video-color.svg"
       :texts="video"
       image="vikapu.png"
-      :left="true"
+      :width="762"
+      :height="1476"
+      left
       :title="$t('designSection.videoTitle')"
     />
+
     <vv-design-BackgroundImage />
   </div>
 </template>
 
-
 <script lang="ts" setup>
-
-// This will work in both `<script setup>` and `<script>`
 definePageMeta({
   layout: 'vv',
 })
@@ -58,53 +65,45 @@ useSeoMeta({
 
 const auth = [
   t('designSection.auth.description1'),
-  t('designSection.auth.description2')
+  t('designSection.auth.description2'),
 ];
 
 const numerical = [
   t('designSection.numerical.description1'),
-  t('designSection.numerical.description2')
+  t('designSection.numerical.description2'),
 ];
 
 const performance = [
   t('designSection.performance.description1'),
-  t('designSection.performance.description2')
+  t('designSection.performance.description2'),
 ];
 
 const video = [
   t('designSection.video.description1'),
-  t('designSection.video.description2')
+  t('designSection.video.description2'),
 ];
-
 </script>
 
 <style lang="scss" scoped>
-* {
-    font-family: $nunito-regular;
-    background-color: white;
-}
-
-.bg-blue {
-  @apply pt-2 pb-16 mt-24;
-  background-color: $branding-blue !important;
-  .content {
-    background-color: $branding-blue;
-
-  }
-}
+.design {
+  padding-bottom: var(--space-block);
 
   h1 {
-    font-size: 2.4rem;
-    padding-top: 7rem;
-    text-align: center;
-    letter-spacing: 4px;
+    font-size: clamp(1.75rem, 1.25rem + 2vw, 2.4rem);
     font-weight: 400;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: var(--space-block) var(--gutter) 0;
   }
 
-  @media screen and (min-width: 482px) and (max-width:768px) {
-    h1 {
-      font-size: 2rem;
-      margin-top: 2.5rem;
-    }
+  .block { margin-top: var(--space-block); }
+
+  // Full-bleed band in the client's blue, darkened to the variant that passes
+  // 4.5:1 with white text — the same treatment as the About page bands.
+  .band {
+    background: $branding-blue-deep;
+    color: white;
+    padding-block: 1.5rem 4rem;
   }
+}
 </style>

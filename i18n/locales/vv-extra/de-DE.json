@@ -1,0 +1,40 @@
+{
+  "vvExtra": {
+    "strip": {
+      "backToWork": "zurück zur Arbeit",
+      "caseStudy": "Fallstudie",
+      "home": "Kike Tordera — Startseite"
+    },
+    "nav": {
+      "label": "Value Villages",
+      "home": "Kike Tordera — Startseite"
+    },
+    "team": {
+      "linkedin": "LinkedIn-Profil von {name}",
+      "web": "Website von {name}",
+      "email": "E-Mail an {name}"
+    },
+    "awards": {
+      "thinkBig": "Think-Big-Blog",
+      "telefonica": "Fundación Telefónica"
+    },
+    "support": {
+      "totem": "Totem Studio",
+      "hn": "HN Bavaria",
+      "upv": "Polytechnische Universität Valencia",
+      "learning": "Learning Lions"
+    },
+    "design": {
+      "dashboard": {
+        "title": "Dashboard",
+        "intro": "Ein klares und verständliches Menü ist die Grundlage, um Vertrauen in die Nutzung des Systems zu schaffen. Das Hauptmenü ist eine Sammlung von Icons mit einer kurzen Beschreibung, aufgeteilt in 3 Kategorien:",
+        "services": "Dienste",
+        "servicesText": "das sind individuelle Dienste, die du je nach Bedarf anlegen kannst.",
+        "actions": "Aktionen",
+        "actionsText": "das sind die globalen Aktionen, die du in allen von dir angelegten Diensten ausführen kannst.",
+        "logout": "Abmelden",
+        "logoutText": "um deine Sitzung zu beenden."
+      }
+    }
+  }
+}

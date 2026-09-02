@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <vv-general-NavBar /> -->
+    <h1 class="sr-only">Value Villages · {{ $t('labels.features') }}</h1>
     <vv-features-Community />
     <vv-features-Map />
     <vv-features-OfflineMode />
@@ -17,7 +17,6 @@
 </template>
 
 <script lang="ts" setup>
-// This will work in both `<script setup>` and `<script>`
 definePageMeta({
   layout: 'vv',
 })
@@ -29,11 +28,3 @@ useSeoMeta({
   description: t('seo.valueVillages.features.description'),
 });
 </script>
-
-<style lang="scss" scoped>
-* {
-    font-family: $nunito-regular;
-    background-color: white;
-}
-
-</style>

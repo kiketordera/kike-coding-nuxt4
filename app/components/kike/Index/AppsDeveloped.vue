@@ -65,7 +65,9 @@ const { te } = useI18n()
 
   .icon { width: 72px; height: 72px; border-radius: 16px; transition: transform var(--dur-fast) ease-out; }
   .body { display: grid; gap: 0.35rem; min-width: 0; }
-  h3 { font-size: var(--fs-md); font-weight: 700; color: var(--accent); }
+  // The app's accent is an identity cue (border, ring), never the text colour — several fail contrast on the dark surface.
+  h3 { font-size: var(--fs-md); font-weight: 700; color: var(--text-strong); display: flex; align-items: center; gap: 0.5rem; }
+  h3::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
   p {
     font-family: var(--font-text);
     font-size: var(--fs-sm);

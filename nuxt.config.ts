@@ -52,7 +52,6 @@ export default defineNuxtConfig({
     "@dargmuesli/nuxt-cookie-control",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",
-    "@pinia/nuxt",
     "@nuxt/eslint",
     // Analisis
     "nuxt-gtag",
@@ -84,7 +83,21 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
+      // Static fallbacks for the prerendered shell (the SPA sets the real, localised values on the client)
+      title: "Kike Tordera — Mobile developer & UX/UI engineer, Berlin",
+      meta: [
+        { name: "description", content: ContactInformation.description },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: `${ContactInformation.fullURL}/og-image.jpg` },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: `${ContactInformation.fullURL}/og-image.jpg` },
+      ],
       link: [
+        // The two faces every page paints with, preloaded so text never flashes a fallback
+        { rel: "preload", href: "/fonts/SourceCodePro-Variable.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+        { rel: "preload", href: "/fonts/SourceSans3-Variable.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
         { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
@@ -212,7 +225,8 @@ export default defineNuxtConfig({
   // static /og-image.jpg set in app.vue instead.
   ogImage: { enabled: false },
   site: {
-    siteUrl: ContactInformation.fullURL,
+    url: ContactInformation.fullURL,
+    name: ContactInformation.title,
   },
   runtimeConfig: {
     public: {
@@ -263,25 +277,25 @@ export default defineNuxtConfig({
         code: "es",
         language: "es-ES",
         name: "Español (España)",
-        files: ["es-ES.json", "./legal/cookies-policy/es-ES.json", "./legal/privacy-policy/es-ES.json", "./general/es-ES.json", "./vv/vv-es-ES.json",],  
+        files: ["es-ES.json", "./legal/cookies-policy/es-ES.json", "./legal/privacy-policy/es-ES.json", "./general/es-ES.json", "./vv/vv-es-ES.json", "./about/es-ES.json", "./case-study/es-ES.json", "./vv-extra/es-ES.json"],  
       },
       {
         code: "en",
         language: "en-US",
         name: "English (US)",
-        files: ["en-US.json", "./legal/cookies-policy/en-US.json", "./legal/privacy-policy/en-US.json", "./general/en-US.json", "./vv/vv-en-US.json",],  
+        files: ["en-US.json", "./legal/cookies-policy/en-US.json", "./legal/privacy-policy/en-US.json", "./general/en-US.json", "./vv/vv-en-US.json", "./about/en-US.json", "./case-study/en-US.json", "./vv-extra/en-US.json"],  
       },
       {
         code: "fr",
         name: "French (France)",
         language: "fr-FR",
-        files: ["fr-FR.json", "./legal/cookies-policy/fr-FR.json", "./legal/privacy-policy/fr-FR.json", "./general/fr-FR.json", "./vv/vv-fr-FR.json",],
+        files: ["fr-FR.json", "./legal/cookies-policy/fr-FR.json", "./legal/privacy-policy/fr-FR.json", "./general/fr-FR.json", "./vv/vv-fr-FR.json", "./about/fr-FR.json", "./case-study/fr-FR.json", "./vv-extra/fr-FR.json"],
       },
       {
         code: "de",
         name: "German (Germany)",
         language: "de-DE",
-        files: ["de-DE.json", "./legal/cookies-policy/de-DE.json", "./legal/privacy-policy/de-DE.json", "./general/de-DE.json", "./vv/vv-de-DE.json",],
+        files: ["de-DE.json", "./legal/cookies-policy/de-DE.json", "./legal/privacy-policy/de-DE.json", "./general/de-DE.json", "./vv/vv-de-DE.json", "./about/de-DE.json", "./case-study/de-DE.json", "./vv-extra/de-DE.json"],
       },
     ],
   },

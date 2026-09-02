@@ -1,31 +1,24 @@
 <template>
-  <div class="info">
-    <p>
-      {{ $t('valueVillagesSection.ngoFocus') }}
-    </p>
-    <p>
-      {{ $t('valueVillagesSection.growingFarm') }}
-    </p>
-    <p>
-      {{ $t('valueVillagesSection.empowerment') }}
-    </p>
-    <p>
-      {{ $t('valueVillagesSection.softwarePlatform') }}
-    </p>
+  <div v-reveal class="info">
+    <p>{{ $t('valueVillagesSection.ngoFocus') }}</p>
+    <p>{{ $t('valueVillagesSection.growingFarm') }}</p>
+    <p>{{ $t('valueVillagesSection.empowerment') }}</p>
+    <p>{{ $t('valueVillagesSection.softwarePlatform') }}</p>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .info {
   max-width: 56rem;
-  margin: 0 auto;
-  padding: 0rem 2rem;
-  padding-top: 2rem;
+  margin-inline: auto;
+  padding: 2rem var(--gutter) 0;
 
   p {
-    @apply text-base md:text-xl text-justify;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    font-size: var(--fs-md);
+    margin: 2rem auto;
+    max-width: 65ch;
+    text-align: start;
+    @media (min-width: 768px) { font-size: var(--fs-lg); }
   }
 }
 </style>

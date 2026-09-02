@@ -1,16 +1,12 @@
 <template>
-  <section>
-    <div class="offline-mode">
+  <section v-reveal class="vv-offline">
+    <div class="inner">
       <div class="title">
-        <img src="~assets/svg/vv/wifi.svg" alt="">
-        <p>
-          {{ $t('offlineModeSection.title') }}
-        </p>
+        <img src="~/assets/svg/vv/wifi.svg" width="85" height="60" alt="">
+        <h2>{{ $t('offlineModeSection.title') }}</h2>
       </div>
       <div class="info">
-        <p>
-          {{ $t('offlineModeSection.description') }}
-        </p>
+        <p>{{ $t('offlineModeSection.description') }}</p>
       </div>
     </div>
   </section>
@@ -18,56 +14,49 @@
 
 <style lang="scss" scoped>
 section {
-  @apply pt-20;
-  max-width: 56rem;
-  margin: 0 auto;
+  font-family: $nunito-regular;
+  font-weight: 400;
+  color: $background;
+  background-color: white;
+  padding: 4rem var(--gutter) 2rem;
 
-  .offline-mode {
-    margin-bottom: 1rem;
+  .inner {
+    max-width: 56rem;
+    margin-inline: auto;
+  }
 
-    .title {
-      display: flex;
-      justify-content: center;
-      justify-items: center;
-      align-items: center;
-      padding: 1rem 0rem;
-      margin: 0 auto;
-      
-      margin-bottom: 1rem;
-      img {
-        height: 60px;
-      }
+  .title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
 
-       p {
-        @apply font-semibold px-4;
-        font-size: 2.4rem;
-        text-align: center;
-        span {
-          color: #f7941d;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-        p {
-          @apply text-3xl;
-        }
-
-        img {
-          @apply w-10 h-auto;
-        }
-      }
+    img {
+      flex: none;
+      width: 85px;
+      height: 60px;
     }
 
-    .info {
-      p {
-          @apply text-base md:text-xl text-justify px-4;
-      }
+    h2 {
+      font-family: $nunito-regular;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.4rem);
+      letter-spacing: 0;
+      color: inherit;
+      text-align: center;
+    }
+  }
 
-      @media screen and (max-width: 768px) {
-        p {
-          @apply text-base mb-2 px-4;
-        }
-      }
+  .info {
+    max-width: 48rem;
+    margin-inline: auto;
+
+    p {
+      font-size: clamp(1rem, 0.95rem + 0.4vw, 1.25rem);
+      line-height: var(--lh-body);
+      margin-inline: auto;
     }
   }
 }

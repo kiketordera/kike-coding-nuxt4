@@ -1,0 +1,26 @@
+{
+  "caseStudy": {
+    "eyebrow": "case study",
+    "role": "Role",
+    "stack": "Stack",
+    "platform": "Platform",
+    "year": "Year",
+    "live": "Live",
+    "problem": "the problem",
+    "built": "what I built",
+    "screens": "screens",
+    "previous": "previous",
+    "next": "next",
+    "allWork": "all work",
+    "mobile": "Mobile",
+    "web": "Web",
+    "coverAlt": "{client} — project cover",
+    "mockupAlt": "{client} mockup {n}",
+    "screenAlt": "{client} screen {n}",
+    "prevScreen": "Previous screen",
+    "nextScreen": "Next screen",
+    "pager": "Screen {n} of {total}",
+    "liveAria": "Open {host} in a new tab",
+    "projectsNav": "Other case studies"
+  }
+}

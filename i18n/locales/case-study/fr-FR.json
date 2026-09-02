@@ -1,0 +1,26 @@
+{
+  "caseStudy": {
+    "eyebrow": "étude de cas",
+    "role": "Rôle",
+    "stack": "Stack",
+    "platform": "Plateforme",
+    "year": "Année",
+    "live": "En ligne",
+    "problem": "le problème",
+    "built": "ce que j'ai construit",
+    "screens": "écrans",
+    "previous": "précédent",
+    "next": "suivant",
+    "allWork": "tous les projets",
+    "mobile": "Mobile",
+    "web": "Web",
+    "coverAlt": "{client} — visuel du projet",
+    "mockupAlt": "Maquette {n} de {client}",
+    "screenAlt": "Écran {n} de {client}",
+    "prevScreen": "Écran précédent",
+    "nextScreen": "Écran suivant",
+    "pager": "Écran {n} sur {total}",
+    "liveAria": "Ouvrir {host} dans un nouvel onglet",
+    "projectsNav": "Autres études de cas"
+  }
+}

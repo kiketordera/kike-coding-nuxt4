@@ -1,72 +1,51 @@
 <template>
-  <section>
-    <div class="village">
-      <NuxtImg src="/img/vv/logo.png" alt="" class="logo" />
-      <h1>
-        {{ $t('valueVillagesSection.title') }}
-      </h1>
-      <p>
-        {{ $t('valueVillagesSection.openSource') }}
-      </p>
-      <p>
-        {{ $t('valueVillagesSection.customisable') }}
-      </p>
-      <p>
-        {{ $t('valueVillagesSection.fullSet') }}
-      </p>
-    </div>
+  <section class="intro">
+    <NuxtImg
+      src="/img/vv/logo.png"
+      alt="Value Villages"
+      width="328"
+      height="254"
+      sizes="(max-width: 700px) 144px, 192px"
+      format="webp"
+      loading="eager"
+      class="logo"
+    />
+    <h1>{{ $t('valueVillagesSection.title') }}</h1>
+    <p>{{ $t('valueVillagesSection.openSource') }}</p>
+    <p>{{ $t('valueVillagesSection.customisable') }}</p>
+    <p>{{ $t('valueVillagesSection.fullSet') }}</p>
   </section>
 </template>
 
-
 <style lang="scss" scoped>
-section {
-  max-width: 72rem;
-  margin: 0 auto;
-  padding: 0rem 1rem;
-  padding-top: 6rem;
-  padding-bottom: 2rem;
+.intro {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: var(--space-block) var(--gutter) var(--space-stack);
+  text-align: center;
 
-  .village {
-    @apply max-w-6xl;
+  .logo {
     width: 100%;
+    max-width: 12rem;
+    height: auto;
+    margin: 1rem auto 2rem;
+    @media (max-width: 700px) { max-width: 9rem; }
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 1rem + 2vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  // Three short lines, each under two lines long, so they stay centred.
+  p {
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin: 0 auto 0.5rem;
     text-align: center;
-
-    .logo {
-      @apply w-full mx-auto;
-      max-width: 12rem;
-      height: cover;
-      vertical-align: middle;
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    h1 {
-      @apply text-6xl mb-6;
-      font-size: 2rem;
-      font-weight: 600;
-    }
-
-    p {
-      @apply text-base;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-    }
-
-    @media screen and (max-width: 700px) {
-      h1 {
-        @apply text-2xl mb-3 w-full;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-      .logo {
-        max-width: 9rem;
-      }
-    }
+    text-wrap: balance;
   }
 }
 </style>

@@ -1,0 +1,19 @@
+{
+  "aboutPage": {
+    "marker": "01 about",
+    "portraitAlt": "Kike Tordera, portrait",
+    "resume": {
+      "label": "résumé",
+      "human": "Résumé for humans (PDF)",
+      "ats": "Résumé for ATS software (PDF)"
+    },
+    "skills": {
+      "marker": "02 skills",
+      "title": "Skills"
+    },
+    "education": {
+      "marker": "03 education",
+      "title": "Education"
+    }
+  }
+}

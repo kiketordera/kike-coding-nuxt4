@@ -1,212 +1,154 @@
 <template>
-  <section>
-    <div class="content">
-      <h1>Cookies Policy</h1>
-      <p>
-        This Cookie Policy clarifies the nature of Cookies and their application by Us. It is important for You to review
-        this policy in order to comprehend the kinds of cookies We utilize, the data We gather through Cookies, and how that data is employed.
+  <article class="k-container legal">
+    <div class="doc">
+      <header v-reveal class="head">
+        <h1 class="k-title"><span class="brace">{</span> {{ t('cookies-policy-title') }}&nbsp;<span class="brace">}</span></h1>
+        <p class="k-lead">{{ t('cookies-policy-intro') }}</p>
+      </header>
 
-        Typically, Cookies do not encompass any details that can personally recognize a user. However, the personal data We maintain about
-        You might be connected to the information preserved in and acquired from Cookies. For additional details on Our practices for using,
-        storing, and safeguarding your personal information, please consult our Privacy Policy.
+      <section v-reveal class="sec">
+        <p class="k-marker num" aria-hidden="true" />
+        <h2>{{ t('interpretation-definitions-title') }}</h2>
+        <h3>{{ t('interpretation-title') }}</h3>
+        <p>{{ t('interpretation-text') }}</p>
+        <h3>{{ t('definitions-title') }}</h3>
+        <p>{{ t('definitions-intro') }}</p>
+        <ul>
+          <li v-for="key in definitionKeys" :key="key">{{ t(key) }}</li>
+        </ul>
+      </section>
 
-        We refrain from preserving sensitive personal data, such as postal addresses, account passwords, and so on, in the Cookies We employ.
-      </p>
-      <h1>Interpretation and Definitions</h1>
-      <h2>Interpretation</h2>
-      <p>
-        Terms with the initial letter capitalized possess definitions outlined under the specified conditions. These definitions maintain
-        the same meaning irrespective of their appearance in singular or plural forms.
-      </p>
-      <h2>Definitions</h2>
-      <p>
-        In the context of this Cookie Policy:
-      </p>
-      <ul>
-        <li>
-          <b>Company</b> (also referred to as "the Company," "We," "Us," or "Our" in this Cookie Policy) pertains to the TermsFeed.com website.
-        </li>
-        <li>
-          <b> Cookies</b> are small files placed on Your computer, mobile device, or any other device by a website, which contain information
-          about your browsing history on that website, among other purposes.
-        </li>
-        <li>
-          <b> Website</b> denotes {{ URL }}, accessible via {{ fullURL }}
-        </li>
-        <li>
-          <b> You</b> signifies the individual accessing or using the Website, a company, or any legal entity for which such an individual
-          is accessing or using the Website, as applicable.
-        </li>
-      </ul>
-      <h1>
-        Utilization of Cookies
-      </h1>
-      <h2>Categories of Cookies We Employ</h2>
-      <p>
-        Cookies can be classified as "Persistent" or "Session" Cookies. Persistent Cookies remain on your personal computer or mobile device
-        after you go offline, whereas Session Cookies are eliminated as soon as you close your web browser.
+      <section v-reveal class="sec">
+        <p class="k-marker num" aria-hidden="true" />
+        <h2>{{ t('cookies-utilization-title') }}</h2>
+        <h3>{{ t('categories-of-cookies-title') }}</h3>
+        <p>{{ t('categories-of-cookies-text') }}</p>
+        <div v-for="group in cookieGroups" :key="group" class="group">
+          <h4>{{ t(`${group}-title`) }}</h4>
+          <ul class="facts">
+            <li v-for="fact in factsOf(group)" :key="fact.key">
+              <strong v-if="fact.label">{{ fact.label }}</strong>
+              <span v-for="(part, i) in fact.parts" :key="i">{{ part.text }}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-        We utilize both session and persistent Cookies for the objectives outlined below:
-      </p>
-      <h3>Necessary / Essential Cookies</h3>
-      <ul>
-        <li>
-          <b>Type:</b> Session Cookies
-        </li>
-        <li>
-          <b> Managed by:</b> Us
-        </li>
-        <li>
-          <b> Purpose:</b> These Cookies are crucial for offering You services accessible through the Website and allowing You to use some of
-          its functions. They aid in authenticating users and preventing fraudulent use of user accounts. Without these Cookies, the services
-          You request cannot be delivered, and We exclusively use these Cookies to supply You with those services.
-        </li>
-      </ul>
-      <h3>
-        Cookies Policy / Notice Acceptance Cookies
-      </h3>
-      <ul>
-        <li>
-          <b>Type:</b> Persistent Cookies
-        </li>
-        <li>
-          <b> Managed by:</b> Us
-        </li>
-        <li>
-          <b> Purpose:</b> These Cookies determine whether users have accepted the utilization of cookies on the Website.
-        </li>
-      </ul>
-      <h3>
-        Functionality Cookies
-      </h3>
-      <ul>
-        <li>
-          <b>Type:</b> Persistent Cookies
-        </li>
-        <li>
-          <b> Managed by:</b> Us
-        </li>
-        <li>
-          <b> Purpose:</b> These Cookies enable us to recall choices You make while using the Website, such as remembering your login
-          information or language preference. The aim of these Cookies is to offer You a more personalized experience and to prevent
-          You from having to re-enter your preferences each time You use the Website.
-        </li>
-      </ul>
-      <h3>
-        Tracking and Performance Cookies
-      </h3>
-      <ul>
-        <li>
-          <b>Type:</b> Persistent Cookies
-        </li>
-        <li>
-          <b> Managed by:</b> Third-Parties
-        </li>
-        <li>
-          <b> Purpose:</b> These Cookies are employed to gather information about traffic to the Website and how users engage with the Website.
-          The data acquired via these Cookies may directly or indirectly identify you as a unique visitor. This is because the collected
-          information is usually linked to a pseudonymous identifier associated with the device you use to access the Website. We might also
-          use these Cookies to test new advertisements, pages, features, or new functionality of the Website to assess how our users respond
-          to them.
-        </li>
-      </ul>
+      <section v-reveal class="sec">
+        <p class="k-marker num" aria-hidden="true" />
+        <h2>{{ t('your-options-title') }}</h2>
+        <p>{{ t('your-options-text') }}</p>
+        <ul>
+          <li v-for="item in browserItems" :key="item.key">
+            <strong v-if="item.label">{{ item.label }}</strong>
+            <template v-for="(part, i) in item.parts" :key="i">
+              <a v-if="part.href" :href="part.href" target="_blank" rel="noopener">{{ part.text }}</a>
+              <template v-else>{{ part.text }}</template>
+            </template>
+          </li>
+        </ul>
+      </section>
 
-      <h1>
-        Your Options Concerning Cookies
-      </h1>
-      <p>
-        If You prefer not to use Cookies on the Website, first, You must deactivate the use of Cookies in your browser and then erase the Cookies
-        saved in your browser linked to this website. You may use this alternative to prevent the use of Cookies at any time.
-
-        If You decline Our Cookies, You might encounter some inconvenience while using the Website, and certain features may not operate
-        correctly.
-
-        If You wish to remove Cookies or instruct your web browser to delete or refuse Cookies, kindly visit the help pages of your web browser:
-      </p>
-      <ul>
-        <li>
-          <b>Chrome:</b> For the Chrome web browser, please visit this Google page:
-          <a href="https://support.google.com/accounts/answer/32050">https://support.google.com/accounts/answer/32050</a>
-        </li>
-        <li>
-          <b>IE:</b> For the Internet Explorer web browser, please visit this Microsoft page:
-          <a href="http://support.microsoft.com/kb/278835">http://support.microsoft.com/kb/278835</a>
-        </li>
-        <li>
-          <b>Firefox:</b> For the Firefox web browser, please visit this Mozilla page
-          <a href="https://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored">
-            https://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored
-          </a>
-        </li>
-        <li>
-          <b>Safari:</b> For the Safari web browser, please visit this Apple page:
-          <a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac">
-            https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac
-          </a>
-        </li>
-        <li>
-          <b>Other:</b> For any other web browser, please refer to your web browser's official web pages.
-        </li>
-      </ul>
-      <h1>
-        Contact Us
-      </h1>
-      <p>
-        If you have any inquiries about this Cookie Policy, You can reach out to us:
-        By visiting this page on our website <a :href="fullURL">{{ contactURL }}</a>
-      </p>
+      <section v-reveal class="sec">
+        <p class="k-marker num" aria-hidden="true" />
+        <h2>{{ t('contact-us-title') }}</h2>
+        <p>{{ t('contact-us-text') }} <NuxtLink to="/#contact">{{ fullURL }}</NuxtLink></p>
+      </section>
     </div>
-  </section>
+  </article>
 </template>
 
 <script lang="ts" setup>
 import { ContactInformation } from '~/data_helper/contact'
 
-const URL = ContactInformation.URL
+const { t } = useI18n()
 const fullURL = ContactInformation.fullURL
-const contactURL = `${ContactInformation.fullURL}/contact`
+
+const definitionKeys = ['definition-company', 'definition-cookies', 'definition-website', 'definition-you'] as const
+const cookieGroups = ['necessary-cookies', 'cookies-notice-acceptance', 'functionality-cookies', 'tracking-cookies'] as const
+const browserKeys = ['chrome-browser', 'ie-browser', 'firefox-browser', 'safari-browser', 'other-browsers'] as const
+
+type Part = { text: string; href?: string }
+type Item = { key: string; label: string; parts: Part[] }
+
+// The locale strings carry their own "Label: value" prefix and bare URLs;
+// split them so the label can be set in a real weight and the URL becomes a link.
+const URL_RE = /(https?:\/\/[^\s]*[^\s.,)])/g
+const parse = (key: string): Item => {
+  const text = t(key)
+  const match = text.match(/^[^:]{1,32}?\s*:\s*/)
+  const label = match ? match[0].trimEnd() : ''
+  const rest = match ? text.slice(match[0].length) : text
+  const parts = rest
+    .split(URL_RE)
+    .filter(Boolean)
+    .map((chunk): Part => (/^https?:\/\//.test(chunk) ? { text: chunk, href: chunk } : { text: chunk }))
+  return { key, label, parts }
+}
+
+const factsOf = (group: string) => ['type', 'managed', 'purpose'].map((fact) => parse(`${group}-${fact}`))
+const browserItems = computed(() => browserKeys.map(parse))
 
 useSeoMeta({ robots: 'noindex' })
 </script>
 
 <style lang="scss" scoped>
-section {
-    @apply w-full;
-    background-color: $team-color;
-    font-family: $source-code-regular;
-    .content {
-        @apply mx-2 items-center py-8 max-w-5xl mx-auto pt-24;
-        color: white;
-     h1 {
-       @include title-kike-section;
-       @apply text-2xl md:text-4xl font-light pt-10 lowercase md:uppercase mb-4;
-       font-family: $source-code-black !important;
-      }
-      h2 {
-        @include title-kike-section;
-        @apply text-xl md:text-2xl font-light pt-8 lowercase md:uppercase mb-4;
-        font-family: $source-code-black !important;
-      }
-
-      h3 {
-        @apply text-2xl mb-2 pt-4;
-        font-family: $source-code-black !important;
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: 'Noir Pro Bold';
-        color: $background-color;
-      }
-      p {
-          @apply text-base mb-4;
-      }
-
-      ul li {
-        list-style-type: disc;
-        margin-left: 1rem;
-      }
-    }
+.legal {
+  padding-top: calc(var(--nav-h) + var(--space-block));
+  padding-bottom: var(--space-section);
 }
 
+// One narrow reading column; numbering is a CSS counter so it always matches document order.
+.doc {
+  max-width: 65ch;
+  counter-reset: sec;
+}
+
+.head {
+  h1 { font-size: var(--fs-h1); }
+  .k-lead { margin-top: var(--space-stack); }
+}
+
+.sec {
+  counter-increment: sec;
+  margin-top: var(--space-block);
+  padding-top: var(--space-stack);
+  border-top: 1px solid var(--line);
+
+  .num::before { content: '// ' counter(sec, decimal-leading-zero); }
+  h2 { margin-top: 0.5rem; font-size: var(--fs-h3); }
+  h3 { margin-top: var(--space-stack); font-size: var(--fs-lg); }
+  h4 { margin-top: 1.25rem; font-size: var(--fs-md); font-weight: 600; }
+  h2 + p, h3 + p, h4 + p { margin-top: 0.75rem; }
+}
+
+p { color: var(--text); }
+strong { font-weight: 600; color: var(--text-strong); }
+
+a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 0.15em;
+  overflow-wrap: anywhere;
+  &:hover, &:focus-visible { text-decoration-color: currentColor; }
+}
+
+ul {
+  margin: 0.75rem 0 0;
+  padding-inline-start: 1.25rem;
+  max-width: 65ch;
+  li { padding-inline-start: 0.25rem; text-wrap: pretty; }
+  li + li { margin-top: 0.5rem; }
+  li::marker { color: var(--salmon); }
+}
+
+.facts {
+  list-style: none;
+  margin-top: 0.5rem;
+  border-left: 1px solid var(--line);
+  padding-inline-start: 1rem;
+  li { padding-inline-start: 0; }
+  strong { margin-right: 0.35em; font-family: var(--font-mono); font-size: var(--fs-sm); }
+}
 </style>

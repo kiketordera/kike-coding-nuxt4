@@ -1,56 +1,53 @@
 <template>
-  <section>
-    <div class="card-items">
-    <div class="items">
-      <NuxtImg src="/img/vv/workshop.png" alt="" />
-      <p>
-        {{ $t('valueVillagesSection.cards.softwarePlatform') }}
-      </p>
-    </div>
-    <div class="items">
-      <img src="/img/vv/carousel/performance-color.svg" alt="">
-      <p>
-        {{ $t('valueVillagesSection.cards.videoTutorials') }}
-      </p>
-    </div>
-    <div class="items">
-      <img src="~assets/svg/vv/wifi.svg" alt="">
-      <p>
-        {{ $t('valueVillagesSection.cards.offlineInstallation') }}
-      </p>
-    </div>
-  </div>
+  <section class="cards">
+    <ul v-reveal.stagger="90" class="grid">
+      <li>
+        <NuxtImg src="/img/vv/workshop.png" alt="" width="956" height="782" sizes="96px" format="webp" loading="lazy" />
+        <p>{{ $t('valueVillagesSection.cards.softwarePlatform') }}</p>
+      </li>
+      <li>
+        <img src="/img/vv/carousel/performance-color.svg" alt="" width="80" height="90" loading="lazy">
+        <p>{{ $t('valueVillagesSection.cards.videoTutorials') }}</p>
+      </li>
+      <li>
+        <img src="~assets/svg/vv/wifi.svg" alt="" width="80" height="56" loading="lazy">
+        <p>{{ $t('valueVillagesSection.cards.offlineInstallation') }}</p>
+      </li>
+    </ul>
   </section>
 </template>
 
 <style lang="scss" scoped>
-section {
-  @apply max-w-full px-8;
-  width: 100%;
+.cards {
+  padding: var(--space-stack) var(--gutter);
+}
+
+.grid {
+  list-style: none;
   margin: 0 auto;
+  padding: 0;
+  max-width: var(--container);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  @media (min-width: 769px) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
-  .card-items {
-    @apply flex flex-row items-center gap-8 justify-between max-w-7xl mx-auto;
+  li {
+    min-width: 0;
+    max-width: 24rem;
+    margin-inline: auto;
 
-    .items {
-      @apply max-w-sm;
-
-      img {
-        max-width: 5rem;
-        max-height: 6rem;
-        padding: 1rem 0rem;
-        margin: 0rem auto;
-      }
-
-      p {
-        @apply items-center mt-2 tracking-wider text-justify;
-      }
+    img {
+      height: 5rem;
+      width: auto;
+      max-width: 6rem;
+      object-fit: contain;
+      margin: 1rem auto;
     }
-  }
 
-  @media screen and (max-width: 768px) {
-    .card-items {
-      @apply flex flex-col mb-4;
+    p {
+      letter-spacing: 0.02em;
+      text-align: start;
     }
   }
 }

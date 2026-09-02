@@ -12,15 +12,17 @@
             <span class="sl" aria-hidden="true">//</span> {{ $t(item.label) }}
           </NuxtLink>
         </li>
-        <li class="lang" role="group" :aria-label="$t('v2.nav.language')">
-          <button
-            v-for="code in locales"
-            :key="code"
-            type="button"
-            :class="{ active: code === locale }"
-            :aria-pressed="code === locale"
-            @click="switchLocale(code)"
-          >{{ code.toUpperCase() }}</button>
+        <li>
+          <div class="lang" role="group" :aria-label="$t('v2.nav.language')">
+            <button
+              v-for="code in locales"
+              :key="code"
+              type="button"
+              :class="{ active: code === locale }"
+              :aria-pressed="code === locale"
+              @click="switchLocale(code)"
+            >{{ code.toUpperCase() }}</button>
+          </div>
         </li>
         <li>
           <a :href="links.linkedin" target="_blank" rel="noopener" class="icon" aria-label="LinkedIn">

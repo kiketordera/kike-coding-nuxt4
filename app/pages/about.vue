@@ -1,7 +1,8 @@
 <template>
   <div>
-    <KikeAboutInfo />
-    <KikeAboutMySkills />
+    <KikeAboutStory />
+    <KikeAboutSkills />
+    <KikeAboutEducation />
   </div>
 </template>
 

@@ -1,0 +1,40 @@
+{
+  "vvExtra": {
+    "strip": {
+      "backToWork": "back to work",
+      "caseStudy": "case study",
+      "home": "Kike Tordera — home"
+    },
+    "nav": {
+      "label": "Value Villages",
+      "home": "Kike Tordera — home"
+    },
+    "team": {
+      "linkedin": "LinkedIn profile of {name}",
+      "web": "Website of {name}",
+      "email": "Email {name}"
+    },
+    "awards": {
+      "thinkBig": "Think Big blog",
+      "telefonica": "Fundación Telefónica"
+    },
+    "support": {
+      "totem": "Totem Studio",
+      "hn": "HN Bavaria",
+      "upv": "Polytechnic University of Valencia",
+      "learning": "Learning Lions"
+    },
+    "design": {
+      "dashboard": {
+        "title": "Dashboard",
+        "intro": "Having an understanding and clean menu is basic to create confidence in the use of the system. The main menu is a collection of icons labeled with a small description and divided into 3 categories:",
+        "services": "Services",
+        "servicesText": "these are custom services that you can create depending on your necessities.",
+        "actions": "Actions",
+        "actionsText": "these are the global actions that you can make across all services that you create.",
+        "logout": "Logout",
+        "logoutText": "to close your session."
+      }
+    }
+  }
+}

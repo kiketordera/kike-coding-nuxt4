@@ -1,29 +1,49 @@
 <template>
-  <section>
-    <h2>{{ $t('made-with') }}  <img src="~/assets/svg/vv/heart.svg" alt="" class="heart"> {{ $t('by') }}</h2>
-    <div class="team">
-      <div class="cards">
-        <div v-for="team in allTeam" :key="team.name" class="team-section">
-          <NuxtImg :src="`/img/vv/teams/${team.img}`" alt="" />
-          <span>{{ team.name }}</span>
-          <h3>{{ team.title }}</h3>
-          <p>
-            {{ team.description }}
-          </p>
-          <div class="social-media">
-            <a :href="team.linkedin">
-              <img src="~assets/svg/vv/linkedin.svg" alt="">
+  <section v-reveal class="team">
+    <h2>
+      {{ $t('made-with') }}
+      <img src="~/assets/svg/vv/heart.svg" alt="" width="30" height="28" class="heart">
+      {{ $t('by') }}
+    </h2>
+    <ul class="cards">
+      <li v-for="member in allTeam" :key="member.name" class="card">
+        <NuxtImg
+          :src="`/img/vv/teams/${member.img}`"
+          alt=""
+          width="224"
+          height="224"
+          sizes="112px"
+          format="webp"
+          loading="lazy"
+          class="portrait"
+        />
+        <h3>{{ member.name }}</h3>
+        <p class="role">{{ member.title }}</p>
+        <p class="bio">{{ member.description }}</p>
+        <ul class="social" :aria-label="member.name">
+          <li>
+            <a :href="member.linkedin" target="_blank" rel="noopener" :aria-label="$t('vvExtra.team.linkedin', { name: member.name })">
+              <img src="~assets/svg/vv/linkedin.svg" alt="" width="28" height="28">
             </a>
-            <a :href="team.web">
-              <img src="~assets/svg/vv/web.svg" alt="">
+          </li>
+          <li>
+            <a
+              :href="member.web"
+              :target="member.web.startsWith('http') ? '_blank' : undefined"
+              :rel="member.web.startsWith('http') ? 'noopener' : undefined"
+              :aria-label="$t('vvExtra.team.web', { name: member.name })"
+            >
+              <img src="~assets/svg/vv/web.svg" alt="" width="28" height="28">
             </a>
-            <a :href="`mailto:${team.email}`">
-              <img src="~assets/svg/vv/mail.svg" alt="">
+          </li>
+          <li>
+            <a :href="`mailto:${member.email}`" :aria-label="$t('vvExtra.team.email', { name: member.name })">
+              <img src="~assets/svg/vv/mail.svg" alt="" width="28" height="28">
             </a>
-          </div>
-        </div>
-      </div>
-    </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </section>
 </template>
 
@@ -33,88 +53,105 @@ const allTeam = await getI18nJson<Team>('team')
 </script>
 
 <style lang="scss" scoped>
-section {
-  @apply max-w-7xl px-4 mx-auto;
-  width: 100%;
+.team {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: 2rem var(--gutter);
   text-align: center;
-  padding: 2rem 0rem;
 
   h2 {
-    @apply text-4xl my-2;
+    font-size: clamp(1.75rem, 1.25rem + 1.5vw, 2.25rem);
+    margin-block: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .heart {
-    margin-bottom: 10px;
-    max-width: 30px;
-    max-height: 30px;
-    animation-name: pulse;
-    animation-iteration-count: infinite;
-    animation-duration: 2.5s;
-    overflow: visible;
-    display: inline;
+    width: 30px;
+    height: auto;
+    display: inline-block;
+  }
 }
 
-  @keyframes pulse {
-    0% {transform: scale(1);}
-    25% {transform: scale(.97);}
-    35% {transform: scale(.9);}
-    45% {transform: scale(1.1);}
-    55% {transform: scale(.9);}
-    65% {transform: scale(1.1);}
-    75% {transform: scale(1.03);}
-    100% {transform: scale(1);}
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 1.5rem 0;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  @media (min-width: 640px) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 900px) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.card {
+  min-width: 0;
+
+  .portrait {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1rem auto;
   }
 
-  .team {
-    @apply items-center px-4;
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: $branding-blue-deep;
+  }
 
-    .cards {
-      @apply gap-6 w-full py-6;
-      display: flex;
-      flex-direction: row;
+  // Bold at 20px counts as large text, where the brand pink clears 3:1 on white.
+  .role {
+    margin: 0.5rem auto;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: $branding-pink;
+    text-align: center;
+  }
 
-      .team-section {
-        @apply w-full ;
+  .bio {
+    font-size: var(--fs-md);
+    max-width: 28rem;
+    margin-inline: auto;
+    text-align: start;
+  }
+}
 
-        img {
-          @apply rounded-full mx-auto w-28 h-28 my-4;
-        }
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 
-        span {
-          @apply text-3xl mb-4 tracking-wider;
-          color: #00A3D2;
-          white-space: nowrap;
-          font-weight: 400;
-        }
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    img { width: 28px; height: 28px; }
+  }
+}
 
-        h3 {
-          @apply my-2 tracking-wider font-semibold;
-          color: #ED037C;
-          white-space: nowrap;
-        }
-
-        p {
-          @apply text-base w-full text-justify max-w-md mx-auto;
-        }
-      }
-
-      .social-media {
-        @apply flex w-full mb-0 justify-center items-center gap-10 py-3 px-4;
-
-        a {
-          img {
-            @apply w-7 h-7;
-          }
-        }
-
-      }
-    }
-
-    @media screen and (max-width: 900px) {
-      .cards {
-        @apply flex-col mb-3 px-4;
-      }
-    }
+@media (prefers-reduced-motion: no-preference) {
+  .heart { animation: pulse 2.5s infinite; }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    25% { transform: scale(0.97); }
+    35% { transform: scale(0.9); }
+    45% { transform: scale(1.1); }
+    55% { transform: scale(0.9); }
+    65% { transform: scale(1.1); }
+    75% { transform: scale(1.03); }
+    100% { transform: scale(1); }
   }
 }
 </style>

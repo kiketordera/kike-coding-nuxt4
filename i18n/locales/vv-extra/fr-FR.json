@@ -1,0 +1,40 @@
+{
+  "vvExtra": {
+    "strip": {
+      "backToWork": "retour au travail",
+      "caseStudy": "étude de cas",
+      "home": "Kike Tordera — accueil"
+    },
+    "nav": {
+      "label": "Value Villages",
+      "home": "Kike Tordera — accueil"
+    },
+    "team": {
+      "linkedin": "Profil LinkedIn de {name}",
+      "web": "Site web de {name}",
+      "email": "Écrire à {name}"
+    },
+    "awards": {
+      "thinkBig": "Blog Think Big",
+      "telefonica": "Fundación Telefónica"
+    },
+    "support": {
+      "totem": "Totem Studio",
+      "hn": "HN Bavaria",
+      "upv": "Université polytechnique de Valence",
+      "learning": "Learning Lions"
+    },
+    "design": {
+      "dashboard": {
+        "title": "Tableau de bord",
+        "intro": "Un menu clair et compréhensible est essentiel pour créer de la confiance dans l'utilisation du système. Le menu principal est un ensemble d'icônes accompagnées d'une courte description et réparties en 3 catégories :",
+        "services": "Services",
+        "servicesText": "ce sont des services personnalisés que vous pouvez créer selon vos besoins.",
+        "actions": "Actions",
+        "actionsText": "ce sont les actions globales que vous pouvez effectuer dans tous les services que vous créez.",
+        "logout": "Déconnexion",
+        "logoutText": "pour fermer votre session."
+      }
+    }
+  }
+}

@@ -1,20 +1,16 @@
 <template>
-  <section>
-    <div class="system">
+  <section v-reveal class="vv-datatable">
+    <div class="inner">
       <div class="title">
-        <img src="~/assets/svg/vv/calendar.svg" alt="">
-        <p>
+        <img src="~/assets/svg/vv/calendar.svg" width="62" height="60" alt="">
+        <h2>
           {{ $t('decisionSection.title', { decisions: $t('decisionSection.decisions'), data: $t('decisionSection.data') }) }}
-        </p>
+        </h2>
       </div>
       <div class="content">
         <div class="info">
-          <p>
-            {{ $t('decisionSection.description1') }}
-          </p>
-          <p>
-            {{ $t('decisionSection.description2') }}
-          </p>
+          <p>{{ $t('decisionSection.description1') }}</p>
+          <p>{{ $t('decisionSection.description2') }}</p>
           <ul>
             <li>{{ $t('decisionSection.checkbox') }}</li>
             <li>{{ $t('decisionSection.numbers') }}</li>
@@ -23,139 +19,105 @@
             <li>{{ $t('decisionSection.checkFrequency') }}</li>
           </ul>
         </div>
-        <div class="box-img">
-          <div class="details">
-            <NuxtImg src="/img/vv/car.png" alt="" />
-            <p>
-              {{ $t('decisionSection.createCourses') }}
-            </p>
-          </div>
-        </div>
+        <figure class="details">
+          <NuxtImg
+            src="/img/vv/car.png"
+            width="1145"
+            height="2237"
+            sizes="150px"
+            format="webp"
+            loading="lazy"
+            alt=""
+          />
+          <figcaption>{{ $t('decisionSection.createCourses') }}</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 </template>
 
-
-
 <style lang="scss" scoped>
 section {
-  width: 100%;
-  place-content: center;
-  padding: 3rem 0rem;
+  font-family: $nunito-regular;
+  font-weight: 400;
+  color: white;
+  background-color: $branding-green-deep;
+  padding: 4rem var(--gutter);
 
-  background-color: $branding-green;
-
-  .system {
+  .inner {
     max-width: 64rem;
-    margin: 0 auto;
+    margin-inline: auto;
+  }
+
+  .title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 1.5rem;
     margin-bottom: 2rem;
-    font-weight: 400;
 
-    .title {
-      @apply px-4;
-      display: flex;
-      justify-content: center;
-      padding-bottom: 1rem;
-      align-items: center;
-      gap: 2rem;
-      align-items: center;
-
-      img {
-        height: 60px;
-      }
-
-      p {
-        font-size: 2.4rem;
-        text-align: center;
-        font-weight: 900;
-
-        span {
-          color: white;
-        }
-
-      }
-
-      @media screen and (max-width: 768px) {
-        p {
-          @apply text-base mb-2;
-        }
-
-        img {
-          @apply w-10 h-auto;
-        }
-      }
+    img {
+      flex: none;
+      width: 62px;
+      height: 60px;
     }
 
-    .content {
-      display: flex;
-      flex-direction: row;
-      gap: 2;
-      width: 100%;
-      color: white;
+    h2 {
+      font-family: $nunito-regular;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.4rem);
+      letter-spacing: 0;
+      color: inherit;
+      text-align: center;
+    }
+  }
 
-      .info {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 72rem;
-        margin: 0 7rem;
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
 
-        p {
-          max-width: 56rem;
-          align-items: center;
-          text-align: justify;
-          font-size: 20px;
-          padding-bottom: 0.8rem;
-          padding-top: 0.5rem;
+    @media (min-width: 768px) {
+      grid-template-columns: minmax(0, 1fr) 14rem;
+      gap: 3rem;
+    }
+  }
 
-        }
-      }
+  .info {
+    min-width: 0;
+    font-size: clamp(1rem, 0.95rem + 0.4vw, 1.25rem);
+    line-height: var(--lh-body);
 
-      .box-img {
-
-        .details {
-          align-items: center;
-
-          img {
-            height: auto;
-            max-width: 150px;
-            margin: 0rem auto;
-          }
-
-          p {
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            letter-spacing: 3;
-            max-width: 20rem;
-            margin: 1rem auto;
-          }
-        }
-
-      }
+    ul {
+      list-style-type: disc;
+      max-width: 65ch;
+      margin: 1rem 0 0;
+      padding-inline-start: 1.5rem;
     }
 
-    @media screen and (max-width: 768px) {
-      .content {
-        flex-direction: column;
-        margin-bottom: 1rem;
-        padding: 1rem 0rem;
+    li + li {
+      margin-top: 0.4rem;
+    }
+  }
 
-        .details {
-          margin-top: 2rem;
-        }
+  .details {
+    margin: 0 auto;
+    max-width: 20rem;
+    text-align: center;
 
-        .info {
-          @apply px-4 w-full max-w-6xl mx-4 text-base;
-          margin: 0 auto;
-
-          li {
-            @apply mx-4;
-          }
-        }
-      }
+    img {
+      width: 150px;
+      height: auto;
+      margin-inline: auto;
     }
 
+    figcaption {
+      margin-top: 1rem;
+      font-size: var(--fs-md);
+      line-height: var(--lh-body);
+    }
   }
 }
 </style>

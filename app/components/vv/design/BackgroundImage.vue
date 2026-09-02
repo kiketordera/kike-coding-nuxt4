@@ -1,20 +1,25 @@
 <template>
-  <div>
-    <NuxtImg src="/img/vv/everywhere-en.png" alt="" class="background-img" />
+  <div v-reveal class="everywhere">
+    <NuxtImg
+      src="/img/vv/everywhere-en.png"
+      alt=""
+      width="1886"
+      height="734"
+      sizes="100vw"
+      format="webp"
+      loading="lazy"
+    />
   </div>
 </template>
 
-<script>
-
-</script>
-
 <style lang="scss" scoped>
-.background-img {
-  max-width: 100%;
-  margin: 0 auto;
-  margin-top: 4rem;
-  background-position: center;
-  background-size: cover;
-  padding: 0rem 0rem;
+.everywhere {
+  margin-top: var(--space-block);
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+  }
 }
 </style>

@@ -1,97 +1,74 @@
 <template>
-  <section>
-    <h2>
-      {{ $t('technologiesSection.title') }}
-    </h2>
-  <div class="card">
-    <div class="card-items">
-      <h4 class="vue">
-        {{ $t('technologiesSection.vue.title') }}
-      </h4>
-      <p>
-        {{ $t('technologiesSection.vue.description') }}
-      </p>
+  <section v-reveal class="vv-cards">
+    <div class="inner">
+      <h2>{{ $t('technologiesSection.title') }}</h2>
+      <div class="cards">
+        <article class="card card--vue">
+          <h3>{{ $t('technologiesSection.vue.title') }}</h3>
+          <p>{{ $t('technologiesSection.vue.description') }}</p>
+        </article>
+        <article class="card card--bootstrap">
+          <h3>{{ $t('technologiesSection.bootstrap.title') }}</h3>
+          <p>{{ $t('technologiesSection.bootstrap.description') }}</p>
+        </article>
+        <article class="card card--gin">
+          <h3>{{ $t('technologiesSection.gin.title') }}</h3>
+          <p>{{ $t('technologiesSection.gin.description') }}</p>
+        </article>
+      </div>
     </div>
-    <div class="card-items">
-      <h4 class="bootstrap">
-        {{ $t('technologiesSection.bootstrap.title') }}
-      </h4>
-      <p>
-        {{ $t('technologiesSection.bootstrap.description') }}
-      </p>
-    </div>
-    <div class="card-items">
-      <h4 class="gin">
-        {{ $t('technologiesSection.gin.title') }}
-      </h4>
-      <p>
-        {{ $t('technologiesSection.gin.description') }}
-      </p>
-    </div>
-  </div>
-</section>
+  </section>
 </template>
-
 
 <style lang="scss" scoped>
 section {
-  max-width: 72rem;
-  width: auto;
-  margin: 0 auto;
-  padding: 1rem 0rem;
+  font-family: $nunito-regular;
+  font-weight: 400;
+  color: $background;
+  background-color: white;
+  padding: 2rem var(--gutter);
+
+  .inner {
+    max-width: 72rem;
+    margin-inline: auto;
+  }
 
   h2 {
-    @apply font-bold px-4;
-    font-size: 1.8rem;
-    margin-top: 2rem;
+    font-family: $nunito-regular;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.8rem);
+    letter-spacing: 0;
+    color: inherit;
+    margin-bottom: 1.5rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: 2rem;
   }
 
   .card {
-    display: flex;
-    flex-direction: row;
-    gap: 3.6rem;
-    padding: 1rem 1rem;
+    min-width: 0;
+    padding-top: 1rem;
+    border-top: 3px solid $branding-green;
 
-    .card-items {
-      margin: 2rem 0rem;
-      letter-spacing: 1px;
-
-      h4 {
-        font-size: 1.7rem;
-        text-align: center;
-        margin-bottom: 5px;
-        font-weight: 600;
-
-      }
-
-      .vue {
-        color: #41B883;
-
-      }
-
-      .bootstrap {
-        color: #563E7D;
-      }
-
-      .gin {
-        color: #D0AA00;
-      }
-
-      p {
-        text-align: justify;
-                max-width: 500px;
-        margin: 0 auto;
-
-      }
+    h3 {
+      font-family: $nunito-regular;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0;
+      color: inherit;
+      margin-bottom: 0.5rem;
     }
 
-  }
-
-  @media screen and (max-width: 699px) {
-    .card {
-      flex-direction: column;
-      margin-bottom: 1rem;
+    p {
+      font-size: var(--fs-md);
+      line-height: var(--lh-body);
     }
+
+    &--bootstrap { border-top-color: $branding-pink; }
+    &--gin { border-top-color: $branding-orange; }
   }
 }
 </style>

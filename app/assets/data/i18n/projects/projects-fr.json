@@ -163,7 +163,10 @@
             "/img/projects/drones/carousel/eva-drones16.svg"
         ],
         "titleSEO": "Eva Drones - Pionnier de l'Innovation en Livraison",
-        "descriptionSEO": "Découvrez Eva Drones, transformant les systèmes de livraison avec un écosystème de drones visionnaire conçu pour l'efficacité et l'impact."
+        "descriptionSEO": "Découvrez Eva Drones, transformant les systèmes de livraison avec un écosystème de drones visionnaire conçu pour l'efficacité et l'impact.",
+        "role": "Développeur web",
+        "headline": "Une plateforme de bout en bout pour les opérations de drones, avec vidéosurveillance en temps réel",
+        "outcome": "Décollage, atterrissage, recharge et maintenance sur une seule plateforme pour les pilotes de drones — avec contrôle des caméras en direct pour des livraisons allant de la pizza à l'aide humanitaire."
     },
     {
         "id": 3,
@@ -229,6 +232,9 @@
             "/img/projects/action-coast/carousel/action-coast19.svg"
         ],
         "titleSEO": "Action Coast - Aventures Côtières Authentiques",
-        "descriptionSEO": "Vivez des aventures côtières authentiques avec Action Coast, alliant technologie et connaissances locales pour des expériences de voyage uniques."
+        "descriptionSEO": "Vivez des aventures côtières authentiques avec Action Coast, alliant technologie et connaissances locales pour des expériences de voyage uniques.",
+        "role": "Développeur web et applications",
+        "headline": "Une plateforme de voyage pour des expériences côtières authentiques",
+        "outcome": "Une marque et une plateforme avec du contenu géolocalisé et un système d'avis complet, qui relient les voyageurs aux hôtes locaux."
     }
 ]

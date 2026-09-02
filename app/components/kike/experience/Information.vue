@@ -1,46 +1,38 @@
 <template>
-  <div class="info">
-    <h2>
-      {{ props.title }}
-    </h2>
-    <div>
-      <p v-for="d in props.description" :key="d">
-        {{ d }}
-      </p>
+  <section class="k-section">
+    <div class="k-container k-grid">
+      <div v-reveal class="k-label">
+        <p class="k-marker"><span class="sl" aria-hidden="true">//</span> {{ marker }} {{ label }}</p>
+      </div>
+
+      <div v-reveal class="k-content body">
+        <h2 v-if="title" class="k-title"><span class="brace">{</span> {{ title }}&nbsp;<span class="brace">}</span></h2>
+        <div v-if="description.length" class="copy">
+          <p v-for="text in description" :key="text">{{ text }}</p>
+        </div>
+        <slot />
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: Array<string>,
-    required: true,
-  },
-})
-
+defineProps<{
+  /** Two-digit index for the marker: "01" */
+  marker: string
+  /** Section label after the marker: "the problem" */
+  label: string
+  title: string
+  description: string[]
+}>()
 </script>
 
 <style lang="scss" scoped>
-.info {
-  @apply flex lg:flex-row flex-col
-  py-10 mx-auto max-w-6xl px-4 gap-4;
+.body { display: grid; gap: var(--space-stack); }
 
-  h2 {
-    @apply text-2xl lg:w-1/3 mb-4 align-top;
-    font-family: $source-code-semibold;
-    color: white;
-  }
-  div {
-    @apply lg:w-2/3;
-    p {
-      @apply text-base text-justify pb-7;
-    }
-  }
+.copy {
+  font-family: var(--font-text);
+  color: var(--text);
+  p { max-width: 65ch; }
 }
-
 </style>

@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <!-- <vv-general-NavBar /> -->
+  <div class="about">
     <vv-about-Introduction />
     <vv-about-LandingBackground />
     <vv-about-ItemsCards />
@@ -22,18 +21,14 @@ definePageMeta({
 
 const { t } = useI18n();
 
-
 useSeoMeta({
   title: `${t('seo.valueVillages.home.title')}`,
   description: t('seo.valueVillages.home.description'),
 });
-
-
 </script>
 
 <style lang="scss" scoped>
-* {
-    font-family: $nunito-regular;
-    background-color: white;
+.about {
+  padding-bottom: var(--space-block);
 }
 </style>

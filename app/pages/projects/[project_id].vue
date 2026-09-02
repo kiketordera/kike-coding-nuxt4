@@ -1,46 +1,56 @@
 <template>
-  <div>
-    <div>
-      <kike-experience-Intro
-        :client="project.client"
-        :services="project.intro.services"
-        :tech="project.intro.tech"
-        :cover-img="project.mainImg"
-        :year="project.intro.year"
-        :url="project.intro.url"
-      />
-      <kike-experience-Information :title="project.firstTitle" :description="project.firstDescription" />
-      <kike-projects-ImageSection :links="project.firstGroupImages" />
-      <kike-experience-Information :title="project.secondtitle" :description="project.secondDescription" />
-      <kike-experience-ImageCarousel :imgs="project?.secondGroupImages" :type="project.imagesType" />
-      <kike-experience-SliderControls :index="project?.id" />
-    </div>
-  </div>
+  <article class="case">
+    <kike-experience-Intro :project="project" />
+
+    <kike-experience-Information
+      v-if="project.firstTitle || project.firstDescription.length"
+      marker="01"
+      :label="$t('caseStudy.problem')"
+      :title="project.firstTitle"
+      :description="project.firstDescription"
+    >
+      <kike-projects-ImageSection v-if="project.firstGroupImages.length" :links="project.firstGroupImages" :client="project.client" />
+    </kike-experience-Information>
+
+    <kike-experience-Information
+      v-if="project.secondtitle || project.secondDescription.length"
+      marker="02"
+      :label="$t('caseStudy.built')"
+      :title="project.secondtitle"
+      :description="project.secondDescription"
+    />
+
+    <kike-experience-ImageCarousel
+      v-if="project.secondGroupImages.length"
+      marker="03"
+      :imgs="project.secondGroupImages"
+      :type="project.imagesType"
+      :client="project.client"
+    />
+
+    <kike-experience-SliderControls :index="project.id" />
+  </article>
 </template>
 
 <script lang="ts" setup>
+import type { Project } from '~/types/types'
 
-import type { Project }  from '~/types/types';
 const projects = await getI18nJson<Project>('projects')
 
 const route = useRoute()
 const link = route.params.project_id as string
-const project = projects.find((a: Project) => a.url === `/projects/${link}`)!
+const found = projects.find((entry) => entry.url === `/projects/${link}`)
+if (!found) {
+  throw createError({ statusCode: 404, statusMessage: 'Project not found', fatal: true })
+}
+const project = found
 
-const config = useRuntimeConfig()
 useSeoMeta({
-  title: `${config.public.site?.name} | ${project.name}`,
-  description: project.firstDescription[0],
+  title: project.name,
+  description: project.outcome || project.descriptionSEO,
 })
 </script>
 
 <style lang="scss" scoped>
-* {
-  color: #CCCCCC;
-  font-family: $source-code-regular;
-}
-
-.main {
-  @apply max-w-6xl mx-auto px-4 items-center text-justify;
-}
+.case { display: block; }
 </style>

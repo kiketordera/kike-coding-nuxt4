@@ -1,9 +1,3 @@
-export interface WhatsAppState {
-  show: boolean;
-  messageVisible: boolean;
-  notificationVisible: boolean;
-}
-
 export interface Project {
   id: number;
   name: string;

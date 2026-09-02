@@ -1,0 +1,40 @@
+{
+  "vvExtra": {
+    "strip": {
+      "backToWork": "volver al trabajo",
+      "caseStudy": "caso de estudio",
+      "home": "Kike Tordera — inicio"
+    },
+    "nav": {
+      "label": "Value Villages",
+      "home": "Kike Tordera — inicio"
+    },
+    "team": {
+      "linkedin": "Perfil de LinkedIn de {name}",
+      "web": "Sitio web de {name}",
+      "email": "Escribir a {name}"
+    },
+    "awards": {
+      "thinkBig": "Blog Think Big",
+      "telefonica": "Fundación Telefónica"
+    },
+    "support": {
+      "totem": "Totem Studio",
+      "hn": "HN Bavaria",
+      "upv": "Universidad Politécnica de Valencia",
+      "learning": "Learning Lions"
+    },
+    "design": {
+      "dashboard": {
+        "title": "Panel principal",
+        "intro": "Un menú claro y comprensible es básico para generar confianza en el uso del sistema. El menú principal es un conjunto de iconos con una breve descripción, dividido en 3 categorías:",
+        "services": "Servicios",
+        "servicesText": "son servicios personalizados que puedes crear según tus necesidades.",
+        "actions": "Acciones",
+        "actionsText": "son las acciones globales que puedes realizar en todos los servicios que crees.",
+        "logout": "Cerrar sesión",
+        "logoutText": "para cerrar tu sesión."
+      }
+    }
+  }
+}
